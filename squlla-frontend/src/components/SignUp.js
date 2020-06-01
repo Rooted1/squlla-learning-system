@@ -9,7 +9,7 @@ export const SignUp = () => {
           <MDBCard>
             <MDBCardBody className="mx-4">
               <div className="text-center">
-                <h3 className="dark-grey-text mb-5">
+                <h3 className="pink-text mb-5">
                   <strong>Sign up</strong>
                 </h3>
               </div>
@@ -52,7 +52,7 @@ export const SignUp = () => {
               <div className="text-center mb-3">
                 <MDBBtn
                   type="button"
-                  gradient="blue"
+                  gradient="young-passion"
                   rounded
                   className="btn-block z-depth-1a"
                 >
@@ -70,7 +70,7 @@ export const SignUp = () => {
                   rounded
                   className="mr-md-3 z-depth-1a"
                 >
-                  <MDBIcon fab icon="facebook-f" className="blue-text text-center" />
+                  <MDBIcon fab icon="facebook-f" className="pink-text text-center" />
                 </MDBBtn>
                 <MDBBtn
                   type="button"
@@ -78,7 +78,7 @@ export const SignUp = () => {
                   rounded
                   className="mr-md-3 z-depth-1a"
                 >
-                  <MDBIcon fab icon="twitter" className="blue-text" />
+                  <MDBIcon fab icon="twitter" className="pink-text" />
                 </MDBBtn>
                 <MDBBtn
                   type="button"
@@ -86,14 +86,14 @@ export const SignUp = () => {
                   rounded
                   className="z-depth-1a"
                 >
-                  <MDBIcon fab icon="google-plus-g" className="blue-text" />
+                  <MDBIcon fab icon="google-plus-g" className="pink-text" />
                 </MDBBtn>
               </div>
             </MDBCardBody>
             <MDBModalFooter className="mx-5 pt-3 mb-1">
               <p className="font-small grey-text d-flex justify-content-end">
                 Already a member?
-                <a href="#!" className="blue-text ml-1">
+                <a href="#!" className="pink-text ml-1">
 
                   Sign In
                 </a>
