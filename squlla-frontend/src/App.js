@@ -1,6 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route} from 'react-router-dom'
 import {Login} from './components/Login'
 import {SignUp} from './components/SignUp'
 import { HomePage } from './components/Home/HomePage'
@@ -8,9 +7,13 @@ import { HomePage } from './components/Home/HomePage'
 function App() {
   return (
     <div className="App">
-      <HomePage />
-      <Login />
-      <SignUp />
+      <BrowserRouter>
+        <Route exact path='/' component={HomePage} />
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/signup' component={SignUp} />
+        
+        
+      </BrowserRouter>
     </div>
   );
 }
