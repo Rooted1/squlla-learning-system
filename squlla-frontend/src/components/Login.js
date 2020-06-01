@@ -9,7 +9,7 @@ export const Login = () => {
           <MDBCard>
             <MDBCardBody className="mx-4">
               <div className="text-center">
-                <h3 className="dark-grey-text mb-5">
+                <h3 className="pink-text mb-5">
                   <strong>Sign in</strong>
                 </h3>
               </div>
@@ -28,9 +28,9 @@ export const Login = () => {
                 validate
                 containerClass="mb-0"
               />
-              <p className="font-small blue-text d-flex justify-content-end pb-3">
+              <p className="font-small pink-text d-flex justify-content-end pb-3">
                 Forgot
-                <a href="#!" className="blue-text ml-1">
+                <a href="#!" className="pink-text ml-1">
 
                   Password?
                 </a>
@@ -38,7 +38,7 @@ export const Login = () => {
               <div className="text-center mb-3">
                 <MDBBtn
                   type="button"
-                  gradient="blue"
+                  gradient="young-passion"
                   rounded
                   className="btn-block z-depth-1a"
                 >
@@ -56,7 +56,7 @@ export const Login = () => {
                   rounded
                   className="mr-md-3 z-depth-1a"
                 >
-                  <MDBIcon fab icon="facebook-f" className="blue-text text-center" />
+                  <MDBIcon fab icon="facebook-f" className="pink-text text-center" />
                 </MDBBtn>
                 <MDBBtn
                   type="button"
@@ -64,7 +64,7 @@ export const Login = () => {
                   rounded
                   className="mr-md-3 z-depth-1a"
                 >
-                  <MDBIcon fab icon="twitter" className="blue-text" />
+                  <MDBIcon fab icon="twitter" className="pink-text" />
                 </MDBBtn>
                 <MDBBtn
                   type="button"
@@ -72,14 +72,14 @@ export const Login = () => {
                   rounded
                   className="z-depth-1a"
                 >
-                  <MDBIcon fab icon="google-plus-g" className="blue-text" />
+                  <MDBIcon fab icon="google-plus-g" className="pink-text" />
                 </MDBBtn>
               </div>
             </MDBCardBody>
             <MDBModalFooter className="mx-5 pt-3 mb-1">
               <p className="font-small grey-text d-flex justify-content-end">
                 Not a member?
-                <a href="#!" className="blue-text ml-1">
+                <a href="#!" className="pink-text ml-1">
 
                   Sign Up
                 </a>
