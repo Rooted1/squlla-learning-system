@@ -11,7 +11,7 @@ let history = useHistory()
 return (
     <MDBNavbar color="default-color" dark expand="md">
       <MDBNavbarBrand>
-        <strong className="white-text">Squlla</strong>
+        <strong className="white-text" gradient="purple" hoverable>Squlla</strong>
       </MDBNavbarBrand>
       <MDBNavbarToggler onClick={() => setToggleCollapse(!isOpen)} />
       <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
@@ -23,7 +23,7 @@ return (
             <MDBNavLink to="#!">Study</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink to="#!">Flashcards</MDBNavLink>
+            <MDBNavLink to="/flashcards" onClick={()=> history.push('/flashcards')}>Flashcards</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
             <MDBNavLink to="#!">Find a Tutor</MDBNavLink>
@@ -55,6 +55,23 @@ return (
               </MDBDropdownMenu>
             </MDBDropdown>
           </MDBNavItem>
+
+          <MDBNavItem>
+            <MDBDropdown>
+              <MDBDropdownToggle nav caret>
+                <MDBIcon icon="user" />
+              </MDBDropdownToggle>
+              <MDBDropdownMenu className="dropdown-default">
+                <MDBDropdownItem onClick={()=> history.push('/profile')}>View Profile</MDBDropdownItem>
+                <MDBDropdownItem onClick={()=> history.push('/appointments')} >Appointments</MDBDropdownItem>
+                <MDBDropdownItem onClick={()=> history.push('/my-flashcards')} >My Flashcards</MDBDropdownItem>
+                <MDBDropdownItem onClick={()=> history.push('/settings')} >Account Settings</MDBDropdownItem>
+                <MDBDropdownItem onClick={()=> history.push('/study groups')} >Study Groups</MDBDropdownItem>
+              </MDBDropdownMenu>
+            </MDBDropdown>
+          </MDBNavItem>
+
+
         </MDBNavbarNav>
       </MDBCollapse>
     </MDBNavbar>
