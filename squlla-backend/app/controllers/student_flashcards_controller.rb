@@ -1,0 +1,2 @@
+class StudentFlashcardsController < ApplicationController
+end
