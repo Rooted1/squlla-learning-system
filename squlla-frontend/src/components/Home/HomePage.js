@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import GraphIframe from '../Graph'
+import GraphIframe from '../GraphIframe'
 
 // import { Navbar } from './Navbar'
 export const HomePage = () => {
     return (
         <div >
-            <GraphIframe />
+            <h1>Hello there...</h1>   
         </div>
         
     )
