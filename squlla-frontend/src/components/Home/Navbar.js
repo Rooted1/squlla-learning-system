@@ -37,7 +37,7 @@ return (
                 <div className="d-none d-md-inline">Tools</div>
               </MDBDropdownToggle>
               <MDBDropdownMenu className="dropdown-default">
-                <MDBDropdownItem href="#!">Graphing Calculator</MDBDropdownItem>
+                <MDBDropdownItem onClick={()=> history.push('/graphing-calculator')}>Graphing Calculator</MDBDropdownItem>
                 <MDBDropdownItem href="#!">Plagiarism Checker</MDBDropdownItem>
               </MDBDropdownMenu>
             </MDBDropdown>
