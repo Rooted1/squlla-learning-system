@@ -4,7 +4,7 @@ import { MDBCard, MDBCardBody, MDBRow, MDBCol, MDBIcon} from
 
 export const StudentAppointment = () => {
     return (
-        <div>
+        <div >
             <h1>My Appointments</h1>
             <hr />
             <MDBRow>
@@ -19,7 +19,7 @@ export const StudentAppointment = () => {
                                 <MDBCol ><MDBIcon far icon="clock" /> 07:00pm - 07:30pm</MDBCol>
                             </MDBRow>
                             <MDBRow>
-                                <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" />06/03/20</MDBCol>
+                                <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" /> 06/03/20</MDBCol>
                                 <MDBCol md="6" className='blue-text mt-1 d-flex justify-content-end '>Info</MDBCol>
                             </MDBRow>
                         </MDBCardBody>
@@ -37,7 +37,7 @@ export const StudentAppointment = () => {
                                 <MDBCol ><MDBIcon far icon="clock" /> 07:00pm - 07:30pm</MDBCol>
                             </MDBRow>
                             <MDBRow>
-                                <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" />06/03/20</MDBCol>
+                                <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" /> 06/03/20</MDBCol>
                                 <MDBCol md="6" className='blue-text mt-1 d-flex justify-content-end '>Info</MDBCol>
                             </MDBRow>
                         </MDBCardBody>
@@ -55,7 +55,7 @@ export const StudentAppointment = () => {
                                 <MDBCol ><MDBIcon far icon="clock" /> 07:00pm - 07:30pm</MDBCol>
                             </MDBRow>
                             <MDBRow>
-                                <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" />06/03/20</MDBCol>
+                                <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" /> 06/03/20</MDBCol>
                                 <MDBCol md="6" className='blue-text mt-1 d-flex justify-content-end '>Info</MDBCol>
                             </MDBRow>
                         </MDBCardBody>
@@ -73,7 +73,7 @@ export const StudentAppointment = () => {
                                 <MDBCol ><MDBIcon far icon="clock" /> 07:00pm - 07:30pm</MDBCol>
                             </MDBRow>
                             <MDBRow>
-                                <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" />06/03/20</MDBCol>
+                                <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" /> 06/03/20</MDBCol>
                                 <MDBCol md="6" className='blue-text mt-1 d-flex justify-content-end '>Info</MDBCol>
                             </MDBRow>
                         </MDBCardBody>
@@ -93,7 +93,7 @@ export const StudentAppointment = () => {
                                 <MDBCol ><MDBIcon far icon="clock" /> 07:00pm - 07:30pm</MDBCol>
                             </MDBRow>
                             <MDBRow>
-                                <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" />06/03/20</MDBCol>
+                                <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" /> 06/03/20</MDBCol>
                                 <MDBCol md="6" className='blue-text mt-1 d-flex justify-content-end '>Info</MDBCol>
                             </MDBRow>
                         </MDBCardBody>
@@ -111,7 +111,7 @@ export const StudentAppointment = () => {
                                 <MDBCol ><MDBIcon far icon="clock" /> 07:00pm - 07:30pm</MDBCol>
                             </MDBRow>
                             <MDBRow>
-                                <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" />06/03/20</MDBCol>
+                                <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" /> 06/03/20</MDBCol>
                                 <MDBCol md="6" className='blue-text mt-1 d-flex justify-content-end '>Info</MDBCol>
                             </MDBRow>
                             
@@ -130,7 +130,7 @@ export const StudentAppointment = () => {
                                 <MDBCol ><MDBIcon far icon="clock" /> 07:00pm - 07:30pm</MDBCol>
                             </MDBRow>
                             <MDBRow>
-                                <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" />06/03/20</MDBCol>
+                                <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" /> 06/03/20</MDBCol>
                                 <MDBCol md="6" className='blue-text mt-1 d-flex justify-content-end '>Info</MDBCol>
                             </MDBRow>
                         </MDBCardBody>
@@ -148,7 +148,7 @@ export const StudentAppointment = () => {
                                 <MDBCol ><MDBIcon far icon="clock" /> 07:00pm - 07:30pm</MDBCol>
                             </MDBRow>
                             <MDBRow>
-                                <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" />06/03/20</MDBCol>
+                                <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" /> 06/03/20</MDBCol>
                                 <MDBCol md="6" className='blue-text mt-1 d-flex justify-content-end '>Info</MDBCol>
                             </MDBRow>
                         </MDBCardBody>

@@ -43,18 +43,24 @@ return (
             </MDBDropdown>
           </MDBNavItem>
         </MDBNavbarNav>
+
         <MDBNavbarNav right>
           <MDBNavItem>
             <MDBDropdown>
               <MDBDropdownToggle nav caret>
                 <MDBIcon icon="user-lock" />
               </MDBDropdownToggle>
+
               <MDBDropdownMenu className="dropdown-default">
                 <MDBDropdownItem onClick={()=> history.push('/login')}>Login</MDBDropdownItem>
                 <MDBDropdownItem onClick={()=> history.push('/signup')} >Sign Up</MDBDropdownItem>
               </MDBDropdownMenu>
             </MDBDropdown>
           </MDBNavItem>
+
+          {/* <MDBNavItem>
+                <MDBIcon icon="bell" />
+          </MDBNavItem> */}
 
           <MDBNavItem>
             <MDBDropdown>
@@ -63,7 +69,7 @@ return (
               </MDBDropdownToggle>
               <MDBDropdownMenu className="dropdown-default">
                 <MDBDropdownItem onClick={()=> history.push('/profile')}>View Profile</MDBDropdownItem>
-                <MDBDropdownItem onClick={()=> history.push('/appointments')} >Appointments</MDBDropdownItem>
+                <MDBDropdownItem onClick={()=> history.push('/appointments')} >Appointments<sup  style={{color: "red", fontWeight: "bold"}}>8</sup></MDBDropdownItem>
                 <MDBDropdownItem onClick={()=> history.push('/my-flashcards')} >My Flashcards</MDBDropdownItem>
                 <MDBDropdownItem onClick={()=> history.push('/settings')} >Account Settings</MDBDropdownItem>
                 <MDBDropdownItem onClick={()=> history.push('/study groups')} >Study Groups</MDBDropdownItem>

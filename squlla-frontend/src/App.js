@@ -7,6 +7,7 @@ import {FlashCard} from './components/FlashCard'
 import {StudentProfile} from './components/StudentProfile'
 import {Navbar} from './components/Home/Navbar'
 import {StudentAppointment} from './components/StudentAppointment'
+import './App.css'
 
 function App() {
   return (
