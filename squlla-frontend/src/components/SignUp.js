@@ -16,14 +16,14 @@ export const SignUp = () => {
               <MDBInput
                 label="Your first name"
                 group
-                type="first_name"
+                value=''
                 error="wrong"
                 success="right"
               />
               <MDBInput
                 label="Your last name"
                 group
-                type="last_name"
+                value=''
                 error="wrong"
                 success="right"
               />
