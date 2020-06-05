@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
+// import { flashCards } from '../actions/flashcardActions.js'
+// import { connect } from 'react-redux';
 import '../stylesheets/flashcard.css'
 import { MDBCardImage } from
 'mdbreact';
 
-export const FlashCard = () => {
+export const FlashCard = (props) => {
     const [isClicked, setToggleCard] = useState(false)
-
+    console.log(props)
     return (
-        
         <div class="row text-center">
             <div class="col-lg-4 col-md-12 mb-4">
                 <div class="card">
