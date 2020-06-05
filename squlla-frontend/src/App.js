@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { BrowserRouter, Route} from 'react-router-dom'
 import {Login} from './components/Login'
 import {SignUp} from './components/SignUp'
@@ -10,21 +10,43 @@ import {StudentAppointment} from './components/StudentAppointment'
 import GraphIframe from './components/GraphIframe'
 import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-      <Navbar />
-        <Route exact path='/' component={HomePage} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/signup' component={SignUp} />
-        <Route exact path='/graphing-calculator' component={GraphIframe} />
-        <Route exact path='/flashcards' component={FlashCard} />
-        <Route exact path='/profile' component={StudentProfile} />
-        <Route exact path='/appointments' component={StudentAppointment} />
-      </BrowserRouter>
-    </div>
-  );
+import { fetchFlashCards } from './actions/flashcardActions.js'
+import { connect } from 'react-redux';
+
+class App extends Component {
+  componentDidMount() {
+        this.props.fetchFlashCards()        
+      }
+  render(){
+    // console.log(this.props.flashcards)
+    return (
+      <div className="App">
+        <BrowserRouter>
+        <Navbar />
+          <Route exact path='/' component={HomePage} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/signup' component={SignUp} />
+          <Route exact path='/graphing-calculator' component={GraphIframe} />
+          <Route exact path='/flashcards' render={(props) => < FlashCard {...this.props.flashcards} />} />
+          <Route exact path='/profile' component={StudentProfile} />
+          <Route exact path='/appointments' component={StudentAppointment} />
+        </BrowserRouter>
+      </div>
+    );
+  }  
 }
 
-export default App;
+
+const mapStateToProps = state => {
+  return {
+    flashcards: state.flashcards,
+    loading: state.loading
+  }
+}
+ 
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchFlashCards: () => dispatch(fetchFlashCards())
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App)
