@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Flashcard.destroy_all
 
 Flashcard.create({
     question: "Displacement",
@@ -125,7 +126,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZHUgdsOpbG8&s=.vJ9Sa0k",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZHUgdsOpbG8&s=.vJ9Sa0k&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -140,7 +141,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gZG8gY3ljbGluZw&s=3KwDDt.L",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gZG8gY3ljbGluZw&s=3KwDDt.L&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -155,7 +156,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=cmVnYXJkZXIgbGEgdMOpbMOp&s=rHnE9im0",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=cmVnYXJkZXIgbGEgdMOpbMOp&s=rHnE9im0&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -170,7 +171,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gd2F0Y2ggdHY&s=D6J2t5zt",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gd2F0Y2ggdHY&s=D6J2t5zt&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -185,7 +186,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZHUgc2thdGU&s=S0HmZ2sd",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZHUgc2thdGU&s=S0HmZ2sd&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -200,7 +201,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gZG8gc2thdGVib2FyZGluZw&s=ZMWSmJIL",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gZG8gc2thdGVib2FyZGluZw&s=ZMWSmJIL&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -215,7 +216,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=YWxsZXIgZW4gdmlsbGU&s=Wu6Jg0j4",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=YWxsZXIgZW4gdmlsbGU&s=Wu6Jg0j4&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -230,7 +231,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gZ28gdG8gdG93bg&s=DMQPFkJV",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gZ28gdG8gdG93bg&s=DMQPFkJV&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -245,7 +246,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=YWxsZXIgw6AgbGEgcMOqY2hl&s=q1yBrNn5",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=YWxsZXIgw6AgbGEgcMOqY2hl&s=q1yBrNn5&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -260,7 +261,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gZ28gZmlzaGluZw&s=XzDyN0N5",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gZ28gZmlzaGluZw&s=XzDyN0N5&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -275,7 +276,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=cmV0cm91dmVyIG1lcyBhbWlz&s=P2yIWjpo",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=cmV0cm91dmVyIG1lcyBhbWlz&s=P2yIWjpo&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -290,7 +291,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gbWVldCBteSBmcmllbmRz&s=w8nB9LvO",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gbWVldCBteSBmcmllbmRz&s=w8nB9LvO&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -305,7 +306,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=bmFnZXI&s=1f1xE3ls",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=bmFnZXI&s=1f1xE3ls&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -320,7 +321,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gc3dpbQ&s=T-yTerKu",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gc3dpbQ&s=T-yTerKu&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -335,7 +336,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=bGlyZQ&s=mTGswp-t",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=bGlyZQ&s=mTGswp-t&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -350,7 +351,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gcmVhZA&s=GuMxANPO",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gcmVhZA&s=GuMxANPO&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -365,7 +366,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=am91ZXIgw6AgbCdvcmRpbmF0ZXVy&s=RdAfK5c9",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=am91ZXIgw6AgbCdvcmRpbmF0ZXVy&s=RdAfK5c9&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -380,7 +381,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gcGxheSBvbiB0aGUgY29tcHV0ZXI&s=uNPt190C",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gcGxheSBvbiB0aGUgY29tcHV0ZXI&s=uNPt190C&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -395,7 +396,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=w6ljb3V0ZXIgZGUgbGEgbXVzaXF1ZQ&s=OqjwX7GB",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=w6ljb3V0ZXIgZGUgbGEgbXVzaXF1ZQ&s=OqjwX7GB&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -410,7 +411,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gbGlzdGVuIHRvIG11c2lj&s=H-eCCDYS",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gbGlzdGVuIHRvIG11c2lj&s=H-eCCDYS&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -425,7 +426,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=am91ZXIgYXUgZm9vdA&s=o7i6XZiB",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=am91ZXIgYXUgZm9vdA&s=o7i6XZiB&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -440,7 +441,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gcGxheSBmb290YmFsbA&s=vHJAxVj7",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gcGxheSBmb290YmFsbA&s=vHJAxVj7&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -455,7 +456,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=am91ZXIgYXUgdm9sbGV5&s=FIpWiHHx",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=am91ZXIgYXUgdm9sbGV5&s=FIpWiHHx&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -470,7 +471,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gcGxheSB2b2xsZXliYWxs&s=YxZLoES7",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gcGxheSB2b2xsZXliYWxs&s=YxZLoES7&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -485,7 +486,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=am91ZXIgYXUgdGVubmlz&s=D8uaEpPp",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=am91ZXIgYXUgdGVubmlz&s=D8uaEpPp&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -500,7 +501,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gcGxheSB0ZW5uaXM&s=tYuAvD0X",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gcGxheSB0ZW5uaXM&s=tYuAvD0X&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -515,7 +516,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=am91ZXIgYXUgaG9ja2V5IHN1ciBnbGFjZQ&s=BysCpyAk",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=am91ZXIgYXUgaG9ja2V5IHN1ciBnbGFjZQ&s=BysCpyAk&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -530,7 +531,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gcGxheSBpY2UgaG9ja2V5&s=XLk-2erX",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gcGxheSBpY2UgaG9ja2V5&s=XLk-2erX&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -545,7 +546,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=am91ZXIgYXUgYmFza2V0&s=7Faiynqk",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=am91ZXIgYXUgYmFza2V0&s=7Faiynqk&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -560,7 +561,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gcGxheSBiYXNrZXRiYWxs&s=DvRjVhyC",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gcGxheSBiYXNrZXRiYWxs&s=DvRjVhyC&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -575,7 +576,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=am91ZXIgYXUgYmFkbWludG9u&s=hSVwZbpr",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=am91ZXIgYXUgYmFkbWludG9u&s=hSVwZbpr&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -590,7 +591,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gcGxheSBiYWRtaW50b24&s=GBNBtdhn",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gcGxheSBiYWRtaW50b24&s=GBNBtdhn&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -605,7 +606,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZHUgc2tp&s=.5rYV872",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZHUgc2tp&s=.5rYV872&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -620,7 +621,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gZG8gc2tpaW5n&s=J02YqlA.",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gZG8gc2tpaW5n&s=J02YqlA.&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -635,7 +636,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZGUgbGEgdm9pbGU&s=PBRtIVqK",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZGUgbGEgdm9pbGU&s=PBRtIVqK&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -650,7 +651,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gZG8gc2FpbGluZw&s=pWVOrlRN",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gZG8gc2FpbGluZw&s=pWVOrlRN&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -665,7 +666,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZHUgY2Fub8Or&s=f8DualaP",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZHUgY2Fub8Or&s=f8DualaP&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -680,7 +681,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gZG8gY2Fub2Vpbmc&s=PqajoVjl",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gZG8gY2Fub2Vpbmc&s=PqajoVjl&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -695,7 +696,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZGUgbGEgZGFuc2U&s=zp8Nuh8V",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZGUgbGEgZGFuc2U&s=zp8Nuh8V&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -710,7 +711,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gZG8gZGFuY2luZw&s=kIpnCY-G",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gZG8gZGFuY2luZw&s=kIpnCY-G&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -725,7 +726,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZGUgbCdlc2NhbGFkZQ&s=KuIN80-M",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZGUgbCdlc2NhbGFkZQ&s=KuIN80-M&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -740,7 +741,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gZG8gY2xpbWJpbmc&s=IefIWAAt",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gZG8gY2xpbWJpbmc&s=IefIWAAt&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -755,7 +756,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZGVzIGFydHMgbWFydGlhdXg&s=HKLe7kRQ",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZGVzIGFydHMgbWFydGlhdXg&s=HKLe7kRQ&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -770,7 +771,7 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gZG8gbWFydGlhbCBhcnRz&s=sMPwbRpo",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gZG8gbWFydGlhbCBhcnRz&s=sMPwbRpo&speed=70",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -785,7 +786,7 @@ french_cards = [
       "languageCode": "fr",
       "ttsUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZGUgbCfDqXF1aXRhdGlvbg&s=Qyvr15-y",
       "ttsSlowUrl": "/tts/fr.mp3?v=9&b=ZmFpcmUgZGUgbCfDqXF1aXRhdGlvbg&s=Qyvr15-y&speed=60",
-      "richText": null
+      "richText": nil
     }
   },
   {
@@ -800,7 +801,20 @@ french_cards = [
       "languageCode": "en",
       "ttsUrl": "/tts/en.mp3?v=14&b=dG8gZG8gaG9yc2VyaWRpbmc&s=8Kbnsvrp",
       "ttsSlowUrl": "/tts/en.mp3?v=14&b=dG8gZG8gaG9yc2VyaWRpbmc&s=8Kbnsvrp&speed=70",
-      "richText": null
+      "richText": nil
     }
   }
 ]
+
+french_cards.each_with_index do |hash, index|
+  # hash[:text][:richText] = nil
+  question = ''
+  answer = ''
+  if (index % 2 == 0)
+    question = hash[:text][:plainText]
+    answer = french_cards[index + 1][:text][:plainText]
+  end
+
+  Flashcard.create(question: question, answer: answer, course_name: 'Beginner French', course_subject: 'French')
+
+end
