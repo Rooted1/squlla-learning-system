@@ -78,13 +78,6 @@ Flashcard.create({
 })
 
 Flashcard.create({
-    question: "Power",
-    answer: "The rate at which work is done",
-    course_name: "Basic Definitions",
-    course_subject: "Physics"
-})
-
-Flashcard.create({
     question: "Specific Heat Capacity",
     answer: "This is the heat required to raise the temperature of the unit mass of a given amount of substance. Also known as Enthalpy",
     course_name: "Specific Heat Capacity",
@@ -807,14 +800,9 @@ french_cards = [
 ]
 
 french_cards.each_with_index do |hash, index|
-  # hash[:text][:richText] = nil
-  question = ''
-  answer = ''
   if (index % 2 == 0)
     question = hash[:text][:plainText]
     answer = french_cards[index + 1][:text][:plainText]
+    Flashcard.create(question: question, answer: answer, course_name: 'Beginner French', course_subject: 'French')
   end
-
-  Flashcard.create(question: question, answer: answer, course_name: 'Beginner French', course_subject: 'French')
-
 end
