@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_04_182237) do
+ActiveRecord::Schema.define(version: 2020_06_08_155453) do
+
+  create_table "appointments", force: :cascade do |t|
+    t.string "status"
+    t.time "start_time"
+    t.time "end_time"
+    t.date "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+  end
 
   create_table "flashcards", force: :cascade do |t|
     t.text "question"
@@ -24,6 +34,24 @@ ActiveRecord::Schema.define(version: 2020_06_04_182237) do
   create_table "student_flashcards", force: :cascade do |t|
     t.integer "student_id"
     t.integer "flashcard_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "school"
+    t.string "level"
+    t.date "graduating_year"
+    t.string "discipline"
+    t.text "bio"
+    t.integer "likes"
+    t.integer "unlikes"
+    t.string "profile_pic"
+    t.string "password_digest"
+    t.string "social_handle"
+    t.string "role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
