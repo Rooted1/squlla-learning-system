@@ -14,17 +14,22 @@ import { fetchFlashCards } from './actions/flashcardActions.js'
 import { connect } from 'react-redux';
 
 class App extends Component {
+
   componentDidMount() {
-        this.props.fetchFlashCards()        
-      }
+    this.props.fetchFlashCards()        
+  }
+
+  getLoginInfo = (loginProps) => {
+    console.log(loginProps)
+  }
+
   render(){
-    // console.log(this.props.flashcards)
     return (
       <div className="App">
         <BrowserRouter>
         <Navbar />
           <Route exact path='/' component={HomePage} />
-          <Route exact path='/login' component={Login} />
+          <Route exact path='/login' render={this.getLoginInfo}  /> 
           <Route exact path='/signup' component={SignUp} />
           <Route exact path='/graphing-calculator' component={GraphIframe} />
           <Route exact path='/flashcards' render={(props) => < FlashCard {...this.props.flashcards} />} />

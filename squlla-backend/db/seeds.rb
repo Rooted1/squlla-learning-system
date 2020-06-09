@@ -1471,6 +1471,7 @@ level_array = ['Freshman', 'Sophomore', 'Junior', 'Senior']
       password_digest: 123,
       social_handle: '@squlla',
       role: 'student',
+      email: Faker::Internet.free_email
   })
   end
 end
@@ -1493,6 +1494,7 @@ tutor_level = ['Junior', 'Senior', 'Graduate']
       password_digest: 123,
       social_handle: '@squlla',
       role: 'tutor',
+      email: Faker::Internet.free_email
   })
   end
 end
