@@ -8,6 +8,7 @@ import {StudentProfile} from './components/StudentProfile'
 import {Navbar} from './components/Home/Navbar'
 import {StudentAppointment} from './components/StudentAppointment'
 import GraphIframe from './components/GraphIframe'
+import {CheckText} from './components/CheckText'
 import './App.css'
 
 import { fetchFlashCards } from './actions/flashcardActions.js'
@@ -18,7 +19,6 @@ class App extends Component {
         this.props.fetchFlashCards()        
       }
   render(){
-    // console.log(this.props.flashcards)
     return (
       <div className="App">
         <BrowserRouter>
@@ -27,6 +27,7 @@ class App extends Component {
           <Route exact path='/login' component={Login} />
           <Route exact path='/signup' component={SignUp} />
           <Route exact path='/graphing-calculator' component={GraphIframe} />
+          <Route exact path='/check-text-for-plagiarism' component={CheckText} />
           <Route exact path='/flashcards' render={(props) => < FlashCard {...this.props.flashcards} />} />
           <Route exact path='/profile' component={StudentProfile} />
           <Route exact path='/appointments' component={StudentAppointment} />
