@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_08_155453) do
+ActiveRecord::Schema.define(version: 2020_06_07_222740) do
 
   create_table "appointments", force: :cascade do |t|
+    t.integer "user_id"
     t.string "status"
     t.time "start_time"
     t.time "end_time"
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
   end
 
   create_table "flashcards", force: :cascade do |t|
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_06_08_155453) do
   end
 
   create_table "student_flashcards", force: :cascade do |t|
-    t.integer "student_id"
+    t.integer "user_id"
     t.integer "flashcard_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_06_08_155453) do
     t.string "password_digest"
     t.string "social_handle"
     t.string "role"
+    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

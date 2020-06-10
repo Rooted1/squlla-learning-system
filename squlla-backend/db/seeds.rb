@@ -1461,21 +1461,23 @@ level_array = ['Freshman', 'Sophomore', 'Junior', 'Senior']
       first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name,
       school: Faker::University.name,
-      level: level,
+      level: 'Freshman',
       graduating_year: Random.new.rand(2017..2022),
       discipline: Faker::Educator.degree,
       bio: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.',
-      likes: nil,
-      unlikes: nil,
+      likes: 0,
+      unlikes: 0,
       profile_pic: Faker::Fillmurray.image,
-      password_digest: 123,
+      password: 'test',
       social_handle: '@squlla',
       role: 'student',
+      email: Faker::Internet.free_email
   })
   end
 end
 
 tutor_level = ['Junior', 'Senior', 'Graduate']
+
 
 2.times do 
   tutor_level.each do |level|
@@ -1490,13 +1492,13 @@ tutor_level = ['Junior', 'Senior', 'Graduate']
       likes: 0,
       unlikes: 0,
       profile_pic: Faker::Avatar.image,
-      password_digest: 123,
+      password: 'test',
       social_handle: '@squlla',
       role: 'tutor',
+      email: Faker::Internet.free_email
   })
   end
 end
-
 start_time = Time.new 
 start_time.strftime("%I:%M %p")
 
@@ -1508,5 +1510,7 @@ status_array = ['pending', 'approved', 'completed', 'cancelled']
 10.times do 
   status_array.each do |status|
     Appointment.create( { status: status, start_time: start_time, end_time: end_time, date: Faker::Date.forward(days: 2), user_id: User.all.sample.id } )
+
   end
+  
 end

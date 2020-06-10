@@ -1,5 +1,4 @@
 import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import flashcardsReducer from './reducers/flashcardsReducer.js';
+import {rootReducer} from './reducers/rootReducer.js';
 
-export const store = createStore(flashcardsReducer, applyMiddleware(thunk));
+export const store = createStore(rootReducer);

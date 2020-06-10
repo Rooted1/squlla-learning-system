@@ -1,7 +1,34 @@
-import React from "react";
+import React, {useState} from "react";
+import {useDispatch} from 'react-redux'
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 
 export const Login = () => {
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  let dispatch = useDispatch
+
+  const handleLogin = e => {
+    e.preventDefault()
+    
+    fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
+
+    })
+    .then(res=>res.json())
+    .then(user => {
+      console.log("Here ", user)
+    })
+  }
+
   return (
     <MDBContainer>
       <MDBRow>
@@ -20,6 +47,8 @@ export const Login = () => {
                 validate
                 error="wrong"
                 success="right"
+                value={email}
+                onChange = {e => setEmail(e.target.value)}
               />
               <MDBInput
                 label="Your password"
@@ -27,6 +56,8 @@ export const Login = () => {
                 type="password"
                 validate
                 containerClass="mb-0"
+                value={password}
+                onChange = {e => setPassword(e.target.value)}
               />
               <p className="font-small pink-text d-flex justify-content-end pb-3">
                 Forgot
@@ -41,6 +72,7 @@ export const Login = () => {
                   gradient="young-passion"
                   rounded
                   className="btn-block z-depth-1a"
+                  onClick={handleLogin}
                 >
                   Sign in
                 </MDBBtn>
