@@ -10,6 +10,11 @@
                 ...state,
                 user: {}
             }
+        case 'SIGNUP':
+            return {
+                ...state,
+                user: {}
+            }
         default:
             return
     }
