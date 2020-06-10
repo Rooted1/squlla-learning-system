@@ -24,7 +24,6 @@ class UsersController < ApplicationController
                 school: user[:school],
                 social_handle: user[:social_handle]
             }
-            flash[:success] = "You're successfully logged in!"
             render json: {success: true, user: userHash}
         else
             render json: {success: false}  
