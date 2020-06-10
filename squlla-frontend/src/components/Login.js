@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {useDispatch} from 'react-redux'
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 
 export const Login = () => {
@@ -6,9 +7,26 @@ export const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
+  let dispatch = useDispatch
+
   const handleLogin = e => {
     e.preventDefault()
-    console.log(email, password)
+    
+    fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
+
+    })
+    .then(res=>res.json())
+    .then(user => {
+      console.log("Here ", user)
+    })
   }
 
   return (
