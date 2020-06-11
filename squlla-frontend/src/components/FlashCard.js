@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
+import {useSelector} from 'react-redux'
 import '../stylesheets/flashcard.css'
-import { MDBCardImage } from
-'mdbreact';
+import { MDBCardImage } from 'mdbreact';
 
-export const FlashCard = (props) => {
+export const FlashCard = () => {
     const [isClicked, setToggleCard] = useState(false)
-    const flashcardsArray = Object.values(props)
-
+    let flashcardState = useSelector(state => state.flashcardState)
     return (
 
         <div class="row text-center">
-            {flashcardsArray.map((flashcard) => {
+            {flashcardState.flashcards.map((flashcard) => {
                 return (<div class="col-lg-4 col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body" onClick={()=>setToggleCard(!isClicked)}>
