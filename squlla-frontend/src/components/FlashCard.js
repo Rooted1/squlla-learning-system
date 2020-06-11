@@ -6,7 +6,6 @@ import { MDBCardImage } from 'mdbreact';
 export const FlashCard = () => {
     const [isClicked, setToggleCard] = useState(false)
     let flashcardState = useSelector(state => state.flashcardState)
-    // console.log(flashcardState)
     return (
 
         <div class="row text-center">
