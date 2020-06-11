@@ -1,15 +1,12 @@
 import React, { useState } from 'react'
 import {useSelector} from 'react-redux'
 import '../stylesheets/flashcard.css'
-import { MDBCardImage } from
-'mdbreact';
+import { MDBCardImage } from 'mdbreact';
 
 export const FlashCard = () => {
     const [isClicked, setToggleCard] = useState(false)
     let flashcardState = useSelector(state => state.flashcardState)
-    console.log(flashcardState)
-    // const flashcardsArray = Object.values(flashcardState)
-
+    // console.log(flashcardState)
     return (
 
         <div class="row text-center">
