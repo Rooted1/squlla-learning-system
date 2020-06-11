@@ -10,14 +10,10 @@ import {StudentAppointment} from './components/StudentAppointment'
 import GraphIframe from './components/GraphIframe'
 import './App.css'
 
-import { fetchFlashCards } from './actions/flashcardActions.js'
+// import { fetchFlashCards } from './actions/flashcardActions.js'
 import { useDispatch } from 'react-redux';
 
 const App = () => {
-
-  // componentDidMount() {
-  //   this.props.fetchFlashCards()        
-  // }
 
   let dispatch = useDispatch ()
 
@@ -29,9 +25,6 @@ const App = () => {
         });
   }, [])
 
-  // getLoginInfo = (loginProps) => {
-  //   console.log(loginProps)
-  // }
 
     return (
       <div className="App">
@@ -49,17 +42,4 @@ const App = () => {
     );  
 }
 
-
-// const mapStateToProps = state => {
-//   return {
-//     flashcards: state.flashcards,
-//     loading: state.loading
-//   }
-// }
- 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     fetchFlashCards: () => dispatch(fetchFlashCards())
-//   }
-// }
 export default (App)

@@ -1,4 +1,4 @@
- const userReducer = (state = { user: {} }, action) => {
+ export default (state = { user: {} }, action) => {
     switch(action.type){
         case 'LOGIN':
             return {
@@ -13,9 +13,10 @@
         case 'SIGNUP':
             return {
                 ...state,
-                user: {}
+                user: action.user
             }
         default:
-            return
+            return state
+            
     }
 }
