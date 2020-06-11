@@ -38,7 +38,7 @@ return (
               </MDBDropdownToggle>
               <MDBDropdownMenu className="dropdown-default">
                 <MDBDropdownItem onClick={()=> history.push('/graphing-calculator')}>Graphing Calculator</MDBDropdownItem>
-                <MDBDropdownItem href="#!">Plagiarism Checker</MDBDropdownItem>
+                <MDBDropdownItem onClick={()=> history.push('/check-text-for-plagiarism')}>Plagiarism Checker</MDBDropdownItem>
               </MDBDropdownMenu>
             </MDBDropdown>
           </MDBNavItem>
