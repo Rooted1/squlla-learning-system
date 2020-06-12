@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import {useSelector} from 'react-redux'
 import '../stylesheets/flashcard.css'
-import { MDBCardImage } from 'mdbreact';
 
 export const FlashCard = () => {
     const [isClicked, setToggleCard] = useState(false)

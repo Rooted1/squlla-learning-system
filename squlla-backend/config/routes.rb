@@ -4,12 +4,13 @@ Rails.application.routes.draw do
   resources :student_flashcards
   resources :flashcards
 
-  # get('/login', {to: 'users#new'})
   post('/login', {to: 'users#login'})
   # get('/logout', {to: 'users#destroy'})
   
+  get('/tutors', {to: 'users#tutors'})
+  get('/students', {to: 'users#students'})
+  post('/book-appointment', {to: 'appointments#create'})
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  
 end

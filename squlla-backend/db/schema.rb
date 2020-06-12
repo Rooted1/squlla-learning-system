@@ -13,7 +13,8 @@
 ActiveRecord::Schema.define(version: 2020_06_07_222740) do
 
   create_table "appointments", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "student_id"
+    t.integer "tutor_id"
     t.string "status"
     t.time "start_time"
     t.time "end_time"

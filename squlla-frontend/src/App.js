@@ -1,4 +1,4 @@
-import React, {Component, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import { BrowserRouter, Route} from 'react-router-dom'
 import {Login} from './components/Login'
 import {SignUp} from './components/SignUp'
@@ -6,8 +6,10 @@ import { HomePage } from './components/Home/HomePage'
 import {FlashCard} from './components/FlashCard'
 import {StudentProfile} from './components/StudentProfile'
 import {Navbar} from './components/Home/Navbar'
-import {StudentAppointment} from './components/StudentAppointment'
+import {StudentAppointment} from './components/Appointment/StudentAppointment'
+import {AppointmentForm} from './components/Appointment/AppointmentForm'
 import GraphIframe from './components/GraphIframe'
+import { TutorsPage } from './components/TutorsPage'
 import './App.css'
 
 // import { fetchFlashCards } from './actions/flashcardActions.js'
@@ -36,6 +38,8 @@ const App = () => {
           <Route exact path='/graphing-calculator' component={GraphIframe} />
           <Route exact path='/flashcards' component={FlashCard } />
           <Route exact path='/profile' component={StudentProfile} />
+          <Route exact path='/book-appointment' component={AppointmentForm} />
+          <Route exact path='/tutors' component={TutorsPage} />
           <Route exact path='/appointments' component={StudentAppointment} />
         </BrowserRouter>
       </div>

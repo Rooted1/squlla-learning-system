@@ -1509,7 +1509,7 @@ status_array = ['pending', 'approved', 'completed', 'cancelled']
 
 10.times do 
   status_array.each do |status|
-    Appointment.create( { status: status, start_time: start_time, end_time: end_time, date: Faker::Date.forward(days: 2), user_id: User.all.sample.id } )
+    Appointment.create( { status: status, start_time: start_time, end_time: end_time, date: Faker::Date.forward(days: 2), student_id: User.where(:role => 'student').sample.id,  tutor_id: User.where(:role => 'tutor').sample.id} )
 
   end
   

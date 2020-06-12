@@ -26,7 +26,7 @@ return (
             <MDBNavLink to="/flashcards" onClick={()=> history.push('/flashcards')}>Flashcards</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink to="#!">Find a Tutor</MDBNavLink>
+            <MDBNavLink to="/tutors">Find a Tutor</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
             <MDBNavLink to="#!">Find a Study Mate</MDBNavLink>
@@ -73,6 +73,8 @@ return (
                 <MDBDropdownItem onClick={()=> history.push('/my-flashcards')} >My Flashcards</MDBDropdownItem>
                 <MDBDropdownItem onClick={()=> history.push('/settings')} >Account Settings</MDBDropdownItem>
                 <MDBDropdownItem onClick={()=> history.push('/study groups')} >Study Groups</MDBDropdownItem>
+                <MDBDropdownItem onClick={()=> history.push('/')} >Logout</MDBDropdownItem>
+
               </MDBDropdownMenu>
             </MDBDropdown>
           </MDBNavItem>
