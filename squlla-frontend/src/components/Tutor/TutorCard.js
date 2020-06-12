@@ -1,13 +1,12 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import '../stylesheets/tutors.css'
-import { MDBCard, MDBCardBody, MDBRow, MDBCol, MDBIcon} from 'mdbreact';
+import '../../stylesheets/tutors.css'
+import { MDBCol} from 'mdbreact';
 
 
 export  const TutorCard = (props)  => {
     const tutor = props.tutor
     let history = useHistory()
-    console.log(tutor)
 
     return (
         <MDBCol>

@@ -3,14 +3,15 @@ import { BrowserRouter, Route} from 'react-router-dom'
 import {Login} from './components/Login'
 import {SignUp} from './components/SignUp'
 import { HomePage } from './components/Home/HomePage'
-import {FlashCard} from './components/FlashCard'
+import {FlashCard} from './components/FlashCard/FlashCard'
 import {StudentProfile} from './components/StudentProfile'
 import {Navbar} from './components/Home/Navbar'
 import {StudentAppointment} from './components/Appointment/StudentAppointment'
 import {AppointmentForm} from './components/Appointment/AppointmentForm'
 import GraphIframe from './components/GraphIframe'
-import { TutorsPage } from './components/TutorsPage'
+import { TutorsPage } from './components/Tutor/TutorsPage.js'
 import './App.css'
+
 
 // import { fetchFlashCards } from './actions/flashcardActions.js'
 import { useDispatch } from 'react-redux';
