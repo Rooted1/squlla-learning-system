@@ -14,4 +14,14 @@ class UsersController < ApplicationController
             render json: {success: false}  
         end
     end
+
+    def tutors 
+        tutors = User.where(:role => 'tutor')
+        render json: tutors, include: :tutoring_appointments
+    end
+
+    def students 
+        students = User.where(:role => 'student')
+        render json: students, include: :student_appointments
+    end
 end
