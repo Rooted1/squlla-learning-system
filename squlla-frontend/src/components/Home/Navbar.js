@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
 MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon } from "mdbreact";
 import { useHistory } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export const Navbar = () => {
 const [isOpen, setToggleCollapse] = useState(false)
+
+let userAppointments = useSelector(state => state.userState.user.appointments)
 
 let history = useHistory()
 
@@ -69,7 +72,7 @@ return (
               </MDBDropdownToggle>
               <MDBDropdownMenu className="dropdown-default">
                 <MDBDropdownItem onClick={()=> history.push('/profile')}>View Profile</MDBDropdownItem>
-                <MDBDropdownItem onClick={()=> history.push('/appointments')} >Appointments<sup  style={{color: "red", fontWeight: "bold"}}>8</sup></MDBDropdownItem>
+                <MDBDropdownItem onClick={()=> history.push('/appointments')} >Appointments<sup  style={{color: "red", fontWeight: "bold"}}>{userAppointments.length}</sup></MDBDropdownItem>
                 <MDBDropdownItem onClick={()=> history.push('/my-flashcards')} >My Flashcards</MDBDropdownItem>
                 <MDBDropdownItem onClick={()=> history.push('/settings')} >Account Settings</MDBDropdownItem>
                 <MDBDropdownItem onClick={()=> history.push('/study groups')} >Study Groups</MDBDropdownItem>
