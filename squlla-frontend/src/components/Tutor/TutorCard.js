@@ -1,19 +1,70 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import '../../stylesheets/tutors.css'
 import { MDBCol} from 'mdbreact';
+// import { FlipTutorCard } from './FlipTutorCard'
+
+import {findDOMNode} from 'react-dom'
+import $ from 'jquery'
+
+export const TutorCard = (props)  => {
+
+    function flip(){
+        clearTimeout(backVar);
+            $(".top").css({
+            "box-shadow": "0px 1px 10px -2px rgba(0,0,0,0.43)",
+            "transform": "translateY(-100%)"
+        });
+        flipVar = setTimeout( function(){
+            $(".flip").css({
+                "transform": "rotateY(180deg)"
+            });
+            $(".radius-front").hide();
+        }, 400);
+    }
+    
+    function back(){
+        clearTimeout(flipVar);
+          $(".radius-front").show();
+        backVar = setTimeout( function(){
+            $(".top").css({
+                "box-shadow": "0px 10px 20px 0px rgba(0,0,0,0.43)",
+                "transform": "translateY(-25px)"
+            });
+            
+        }, 400);
+        $(".flip").css({
+                "transform": "none"
+            });
+    }
+    
+    let flipVar, backVar;
+
+    function handleFlip () {
+        console.log('here')
+        const el = findDOMNode(this.refs.flip)
+        $(el).hover(function(){
+            flip();
+        }, function(){
+            back();
+        });
+    }
 
 
-export  const TutorCard = (props)  => {
+
     const tutor = props.tutor
     let history = useHistory()
+    // const [isFlipped, setIsFlipped] = useState(false)
+
+    // console.log(isFlipped)
 
     return (
-        <MDBCol>
+        <MDBCol >
                 <div class="thecard">
-                    <div class="flip">
-                        <div class="thefront">
-                            {/* <div class="my-gradient radius-front"></div> */}
+                    <div ref={(ref) => flip = ref} >
+                    {/* {isFlipped ?  */}
+                        <div class="thefront" onClick={handleFlip}>
+                            {/* <div className="my-gradient radius-front"></div> */}
                             <div class="avatar-container">
                                 <img class="avatar" src={tutor.profile_pic} alt=''/>
                             </div>
@@ -27,9 +78,9 @@ export  const TutorCard = (props)  => {
                                 <i class="fas fa-star amber-text"> </i>
                             </p>
                         </div>
-                    
-                    <div class="theback">
-                        {/* <div class="my-gradient radius-back"></div> */}
+                    {/* : */}
+                    <div className="theback" onClick={handleFlip}>
+                        <div class="my-gradient radius-back"></div>
                         <h4 class="name">Title</h4>
                         <p class="textarea">{tutor.bio}</p>
                         <a href='#' class="btn waves-effect waves-light btn-red center-absolute">More</a>
@@ -56,7 +107,7 @@ export  const TutorCard = (props)  => {
                             </li>
                         </ul>
                     </div>
-                    
+                    {/* } */}
                     <div class="top waves-effect waves-light">
                         <h3>{tutor.first_name} {tutor.last_name}</h3>
                     </div>

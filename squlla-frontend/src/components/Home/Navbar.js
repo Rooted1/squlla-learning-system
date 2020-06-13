@@ -20,7 +20,7 @@ return (
             <MDBNavLink to="/" onClick={()=> history.push('/')}>Home</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink to="#!">Study</MDBNavLink>
+            {/* <MDBNavLink to="#!">Study</MDBNavLink> */}
           </MDBNavItem>
           <MDBNavItem>
             <MDBNavLink to="/flashcards" onClick={()=> history.push('/flashcards')}>Flashcards</MDBNavLink>
@@ -38,7 +38,7 @@ return (
               </MDBDropdownToggle>
               <MDBDropdownMenu className="dropdown-default">
                 <MDBDropdownItem onClick={()=> history.push('/graphing-calculator')}>Graphing Calculator</MDBDropdownItem>
-                <MDBDropdownItem onClick={()=> history.push('/check-text-for-plagiarism')}>Plagiarism Checker</MDBDropdownItem>
+                {/* <MDBDropdownItem onClick={()=> history.push('/check-text-for-plagiarism')}>Plagiarism Checker</MDBDropdownItem> */}
               </MDBDropdownMenu>
             </MDBDropdown>
           </MDBNavItem>
