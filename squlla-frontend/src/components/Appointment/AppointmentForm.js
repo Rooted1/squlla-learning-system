@@ -6,8 +6,7 @@ export const AppointmentForm = () => {
     const [endTime, setEndTime] = useState('')
     const [date, setDate] = useState('')
 
-    // let userState = useSelector(state => state.appointmentState)
-    // let dispatch = useDispatch()
+    let tutorInfoState = useSelector(state => state.tutorInfoState)
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -18,14 +17,11 @@ export const AppointmentForm = () => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
+                tutor_id: tutorInfoState.tutor.id,
                 start_time: startTime,
                 end_time: endTime,
                 date: date
             })
-        })
-        .then(res=>res.json())
-        .then(response => {
-            console.log(response)
         })
         }
 

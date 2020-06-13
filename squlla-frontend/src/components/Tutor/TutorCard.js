@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import '../../stylesheets/tutors.css'
 import { MDBCol} from 'mdbreact';
-// import { FlipTutorCard } from './FlipTutorCard'
-
 import {findDOMNode} from 'react-dom'
 import $ from 'jquery'
+import { useDispatch } from 'react-redux';
 
 export const TutorCard = (props)  => {
 
@@ -42,18 +41,28 @@ export const TutorCard = (props)  => {
 
     function handleFlip () {
         console.log('here')
-        const el = findDOMNode(this.refs.flip)
-        $(el).hover(function(){
-            flip();
-        }, function(){
-            back();
-        });
+        // const el = findDOMNode(this.refs.flip)
+        // $(el).hover(function(){
+        //     flip();
+        // }, function(){
+        //     back();
+        // });
     }
-
-
 
     const tutor = props.tutor
     let history = useHistory()
+    let dispatch = useDispatch()
+
+    const getTutorDetails =  () => {
+        fetch(`http://localhost:3000/tutors/${tutor.id}`)
+        .then(response => response.json())
+        .then(tutor => {
+            console.log('before dispatch', tutor)
+            dispatch({type: 'GET_TUTOR_DETAILS', tutor: tutor})
+        })
+    }
+
+    
     // const [isFlipped, setIsFlipped] = useState(false)
 
     // console.log(isFlipped)
@@ -63,7 +72,7 @@ export const TutorCard = (props)  => {
                 <div class="thecard">
                     <div ref={(ref) => flip = ref} >
                     {/* {isFlipped ?  */}
-                        <div class="thefront" onClick={handleFlip}>
+                        <div class="thefront" onClick={ handleFlip }>
                             {/* <div className="my-gradient radius-front"></div> */}
                             <div class="avatar-container">
                                 <img class="avatar" src={tutor.profile_pic} alt=''/>
@@ -77,7 +86,9 @@ export const TutorCard = (props)  => {
                                 <i class="fas fa-star amber-text"> </i>
                                 <i class="fas fa-star amber-text"> </i>
                             </p>
+                            
                         </div>
+                        <button onClick={getTutorDetails}>Schedule Appointment</button>
                     {/* : */}
                     <div className="theback" onClick={handleFlip}>
                         <div class="my-gradient radius-back"></div>

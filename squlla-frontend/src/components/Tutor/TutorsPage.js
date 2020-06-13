@@ -6,7 +6,7 @@ import { MDBRow} from 'mdbreact';
 export const TutorsPage = () => {
     
     let dispatch = useDispatch()
-    let tutorArray = useSelector(state => state.tutorState.tutors)
+    let tutorsArray = useSelector(state => state.tutorsState.tutors)
 
     useEffect (() => {
         fetch('http://localhost:3000/tutors')
@@ -21,7 +21,7 @@ export const TutorsPage = () => {
             <h1 class="center-text" style={{margin: '50px 0 100px 0'}}>Tutors</h1>                 
             <MDBRow style={{paddingLeft: '60px', paddingRight: '60px'}}>
                 
-                {tutorArray.map( (tutor) => < TutorCard tutor={tutor}/> ) }
+                {tutorsArray.map( (tutor) => < TutorCard tutor={tutor}/> ) }
             </MDBRow>
         </div>
     )
