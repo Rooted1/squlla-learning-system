@@ -10,9 +10,7 @@ export const AppointmentForm = () => {
     const [endTime, setEndTime] = useState('')
     const [date, setDate] = useState(new Date())
 
-    let userId = useSelector(state => state.userState.user.id)
-    // console.log(userId)
-    // let dispatch = useDispatch()
+    let tutorInfoState = useSelector(state => state.tutorInfoState)
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -25,15 +23,11 @@ export const AppointmentForm = () => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                // student_id: userId,
+                tutor_id: tutorInfoState.tutor.id,
                 start_time: startTime,
                 end_time: endTime,
                 date: date
             })
-        })
-        .then(res=>res.json())
-        .then(response => {
-            console.log(response)
         })
         }
 

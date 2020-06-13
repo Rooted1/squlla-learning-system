@@ -7,7 +7,7 @@ class AppointmentsController < ApplicationController
             start_time: params[:start_time],
             end_time: params[:end_time],
             date: params[:date],
-            status: 'pending'  
+            status: 'pending' 
         })
         render json: appointment
     end

@@ -6,8 +6,8 @@ import { FlashcardCard } from './FlashcardCard'
 export const FlashCard = () => {        
     let flashcardState = useSelector(state => state.flashcardState)
     const flashcards = flashcardState.flashcards
-    return (
 
+    return (
         <div class="row text-center">
             {flashcards.map((flashcard) => 
                 <FlashcardCard flashcard={flashcard}/>

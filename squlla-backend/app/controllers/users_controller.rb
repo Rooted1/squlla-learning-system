@@ -24,4 +24,9 @@ class UsersController < ApplicationController
         students = User.where(:role => 'student')
         render json: students, include: :student_appointments
     end
+
+    def tutor_show 
+        tutor = User.find(params[:id])
+        render json: tutor
+    end
 end

@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 export const FlashcardCard = (props) => {
     const [isClicked, setToggleCard] = useState(false)
     const flashcard = props.flashcard
+
     return (
         <div class="col-lg-4 col-md-4 mb-4">
             <div class="card">
