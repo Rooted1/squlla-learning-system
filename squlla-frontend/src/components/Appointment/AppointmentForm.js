@@ -15,7 +15,7 @@ export const AppointmentForm = () => {
     const handleSubmit = e => {
         e.preventDefault()
         
-        console.log(startTime, endTime, date)
+        // console.log(startTime, endTime, date)
 
         fetch('http://localhost:3000/book-appointment', {
             method: 'POST',
