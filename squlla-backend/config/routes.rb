@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   get('/tutors', {to: 'users#tutors'})
   get('/tutors/:id', {to: 'users#tutor_show'})
+  get('/students/:id', {to: 'users#student_show'})
   get('/students', {to: 'users#students'})
   post('/book-appointment', {to: 'appointments#create'})
 

@@ -6,7 +6,7 @@ import { MDBRow} from 'mdbreact';
 export const StudentAppointment = () => {
     let userState = useSelector(state => state.userState)
     let userDetails = userState.user
-    let appointments = userDetails.appointments
+    let appointments = userDetails.student_appointments
 
     return (
         <div >

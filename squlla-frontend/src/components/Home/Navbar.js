@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 export const Navbar = () => {
 const [isOpen, setToggleCollapse] = useState(false)
 
-let userAppointments = useSelector(state => state.userState.user.appointments)
+let userAppointments = useSelector(state => state.userState.user.student_appointments)
 
 let history = useHistory()
 
