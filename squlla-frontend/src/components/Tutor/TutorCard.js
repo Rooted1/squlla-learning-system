@@ -8,6 +8,8 @@ import { useDispatch } from 'react-redux';
 
 export const TutorCard = (props)  => {
 
+    let history = useHistory()
+
     function flip(){
         clearTimeout(backVar);
             $(".top").css({
@@ -50,7 +52,7 @@ export const TutorCard = (props)  => {
     }
 
     const tutor = props.tutor
-    let history = useHistory()
+
     let dispatch = useDispatch()
 
     const getTutorDetails =  () => {
@@ -87,8 +89,9 @@ export const TutorCard = (props)  => {
                                 <i class="fas fa-star amber-text"> </i>
                             </p>
                             
-                        </div>
-                        <button onClick={getTutorDetails}>Schedule Appointment</button>
+                        </div>z
+                        <button onClick={() => history.push('/book-appointment')}>Schedule Appointment</button>
+
                     {/* : */}
                     <div className="theback" onClick={handleFlip}>
                         <div class="my-gradient radius-back"></div>

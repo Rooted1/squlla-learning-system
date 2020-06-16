@@ -33,7 +33,7 @@ return (
             <MDBNavLink to="/tutors">Find a Tutor</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink to="#!">Find a Study Mate</MDBNavLink>
+            <MDBNavLink to="/find-students">Find a Study Mate</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
             <MDBDropdown>

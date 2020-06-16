@@ -1,11 +1,15 @@
 import React, {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 
 
 export const AppointmentForm = () => {
+
+    let history = useHistory()
+
     const [startTime, setStartTime] = useState('')
     const [endTime, setEndTime] = useState('')
     const [date, setDate] = useState(new Date())
@@ -29,8 +33,9 @@ export const AppointmentForm = () => {
                 date: date
             })
         })
+        .then(resp => resp.json())
+        .then(result => console.log(result))
         }
-
 
     return (
         <div >
@@ -51,7 +56,7 @@ export const AppointmentForm = () => {
                     />
                 </div>
                 <div>
-                    <button type='submit'>Schedule Appointment</button> 
+                    <button type='submit' >Schedule Appointment</button> 
                 </div>
             </form>
             
