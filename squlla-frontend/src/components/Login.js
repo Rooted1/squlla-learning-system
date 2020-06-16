@@ -1,14 +1,14 @@
 import React, {useState} from "react";
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch} from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardBody, MDBInput, MDBBtn, MDBIcon, MDBModalFooter } from 'mdbreact';
 // import { fetchUser } from './actions/userActions.js'
 
 export const Login = () => {
-
+  let history = useHistory()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  let userState = useSelector(state => state.userState)
   let dispatch = useDispatch()
 
   const handleLogin = e => {
@@ -28,6 +28,8 @@ export const Login = () => {
     .then(response => {
       dispatch({type: 'LOGIN', user: response.user})
     })
+
+    history.push('/')
   }
 
   return (  

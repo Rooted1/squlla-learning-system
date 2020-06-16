@@ -1,4 +1,4 @@
- export default (state = { user: {} }, action) => {
+ export default (state = { user: null }, action) => {
     switch(action.type){
         case 'LOGIN':
             return {
@@ -8,7 +8,7 @@
         case 'LOGOUT':
             return {
                 ...state,
-                user: {}
+                user: null
             }
         case 'SIGNUP':
             return {

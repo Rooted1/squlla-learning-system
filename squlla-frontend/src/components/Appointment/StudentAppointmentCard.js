@@ -1,8 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import {useDispatch, useSelector} from 'react-redux'
 import { MDBCard, MDBCardBody, MDBRow, MDBCol, MDBIcon} from
 'mdbreact';
 
 export const StudentAppointmentCard = (props) => {
+    const [tutor, setTutor] = useState({})
+    let tutorInfoState = useSelector(state => state.tutorInfoState)
+    
+    useEffect(() => {
+        fetch(`http://localhost:3000/tutors/${props.appointment.tutor_id}`)
+        .then(response => response.json())
+        .then(tutor => setTutor(tutor))
+    }, [])
+
+    let tutorHash = {tutorInfo: tutor}
 
     let color = 'blue-text'
 
@@ -27,10 +38,10 @@ export const StudentAppointmentCard = (props) => {
     return (
         
         <MDBCol col='3'>
-            <MDBCard narrow>
+            <MDBCard narrow >
                 <MDBCardBody cascade className='text-center'>
                     <MDBRow>
-                        <MDBCol md="6" className='black-text mt-1 d-flex justify-content-begin '>{props.userDetails.first_name, ' ' , props.userDetails.last_name}</MDBCol>
+                        <MDBCol md="6" className='blue-text mt-1 d-flex justify-content-begin ' style={{fontWeight: 'bold'}}>{tutorHash.tutorInfo.first_name} {tutorHash.tutorInfo.last_name}</MDBCol>
                         <MDBCol md="6" className={`${color} mt-1 d-flex justify-content-end `} >{props.appointment.status}</MDBCol>
                     </MDBRow>
                     <MDBRow className='grey-text mt-1 d-flex justify-content-begin '>

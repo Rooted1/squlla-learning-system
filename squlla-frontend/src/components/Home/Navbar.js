@@ -7,7 +7,8 @@ import { useSelector } from 'react-redux'
 export const Navbar = () => {
 const [isOpen, setToggleCollapse] = useState(false)
 
-let userAppointments = useSelector(state => state.userState.user.appointments)
+let userState = useSelector(state => state.userState.user)
+console.log( 'In Navbar ', userState)
 
 let history = useHistory()
 
@@ -23,7 +24,7 @@ return (
             <MDBNavLink to="/" onClick={()=> history.push('/')}>Home</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink to="#!">Study</MDBNavLink>
+            {/* <MDBNavLink to="#!">Study</MDBNavLink> */}
           </MDBNavItem>
           <MDBNavItem>
             <MDBNavLink to="/flashcards" onClick={()=> history.push('/flashcards')}>Flashcards</MDBNavLink>
@@ -32,7 +33,7 @@ return (
             <MDBNavLink to="/tutors">Find a Tutor</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink to="#!">Find a Study Mate</MDBNavLink>
+            <MDBNavLink to="/find-students">Find a Study Mate</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
             <MDBDropdown>
@@ -41,48 +42,48 @@ return (
               </MDBDropdownToggle>
               <MDBDropdownMenu className="dropdown-default">
                 <MDBDropdownItem onClick={()=> history.push('/graphing-calculator')}>Graphing Calculator</MDBDropdownItem>
-                <MDBDropdownItem onClick={()=> history.push('/check-text-for-plagiarism')}>Plagiarism Checker</MDBDropdownItem>
+                {/* <MDBDropdownItem onClick={()=> history.push('/check-text-for-plagiarism')}>Plagiarism Checker</MDBDropdownItem> */}
               </MDBDropdownMenu>
             </MDBDropdown>
           </MDBNavItem>
         </MDBNavbarNav>
 
         <MDBNavbarNav right>
-          <MDBNavItem>
-            <MDBDropdown>
-              <MDBDropdownToggle nav caret>
-                <MDBIcon icon="user-lock" />
-              </MDBDropdownToggle>
+          {
+            userState == null ? 
+              <MDBNavItem>
+                <MDBDropdown>
+                  <MDBDropdownToggle nav caret>
+                    <MDBIcon icon="user-lock" />
+                  </MDBDropdownToggle>
+                  <MDBDropdownMenu className="dropdown-default">
+                    <MDBDropdownItem onClick={()=> history.push('/login')}>Login</MDBDropdownItem>
+                    <MDBDropdownItem onClick={()=> history.push('/signup')} >Sign Up</MDBDropdownItem>
+                  </MDBDropdownMenu>
+                </MDBDropdown>
+              </MDBNavItem>
+              :
+              <div>
+              <MDBNavItem>
+                <MDBNavLink to="#!">Hi {userState.first_name},</MDBNavLink>
+              </MDBNavItem>
+              <MDBNavItem>
+                <MDBDropdown>
+                  <MDBDropdownToggle nav caret>
+                    <MDBIcon icon="user" />
+                  </MDBDropdownToggle>
+                  <MDBDropdownMenu className="dropdown-default">
+                    <MDBDropdownItem onClick={()=> history.push('/profile')}>View Profile</MDBDropdownItem>
+                    <MDBDropdownItem onClick={()=> history.push('/appointments')} >Appointments<sup  style={{color: "red", fontWeight: "bold"}}>{userState.student_appointments.length}</sup></MDBDropdownItem>
+                    <MDBDropdownItem onClick={()=> history.push('/my-flashcards')} >My Flashcards</MDBDropdownItem>
+                    <MDBDropdownItem onClick={()=> history.push('/settings')} >Account Settings</MDBDropdownItem>
+                    <MDBDropdownItem onClick={()=> history.push('/study-groups')} >Study Groups</MDBDropdownItem>
+                    <MDBDropdownItem onClick={()=> history.push('/logout')} >Logout</MDBDropdownItem>
 
-              <MDBDropdownMenu className="dropdown-default">
-                <MDBDropdownItem onClick={()=> history.push('/login')}>Login</MDBDropdownItem>
-                <MDBDropdownItem onClick={()=> history.push('/signup')} >Sign Up</MDBDropdownItem>
-              </MDBDropdownMenu>
-            </MDBDropdown>
-          </MDBNavItem>
-
-          {/* <MDBNavItem>
-                <MDBIcon icon="bell" />
-          </MDBNavItem> */}
-
-          <MDBNavItem>
-            <MDBDropdown>
-              <MDBDropdownToggle nav caret>
-                <MDBIcon icon="user" />
-              </MDBDropdownToggle>
-              <MDBDropdownMenu className="dropdown-default">
-                <MDBDropdownItem onClick={()=> history.push('/profile')}>View Profile</MDBDropdownItem>
-                <MDBDropdownItem onClick={()=> history.push('/appointments')} >Appointments<sup  style={{color: "red", fontWeight: "bold"}}>{userAppointments.length}</sup></MDBDropdownItem>
-                <MDBDropdownItem onClick={()=> history.push('/my-flashcards')} >My Flashcards</MDBDropdownItem>
-                <MDBDropdownItem onClick={()=> history.push('/settings')} >Account Settings</MDBDropdownItem>
-                <MDBDropdownItem onClick={()=> history.push('/study groups')} >Study Groups</MDBDropdownItem>
-                <MDBDropdownItem onClick={()=> history.push('/')} >Logout</MDBDropdownItem>
-
-              </MDBDropdownMenu>
-            </MDBDropdown>
-          </MDBNavItem>
-
-
+                  </MDBDropdownMenu>
+                </MDBDropdown>
+              </MDBNavItem></div>
+          }
         </MDBNavbarNav>
       </MDBCollapse>
     </MDBNavbar>

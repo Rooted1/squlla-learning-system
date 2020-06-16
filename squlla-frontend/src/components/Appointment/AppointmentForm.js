@@ -1,20 +1,25 @@
 import React, {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 
 
 export const AppointmentForm = () => {
+
+    let history = useHistory()
+
     const [startTime, setStartTime] = useState('')
     const [endTime, setEndTime] = useState('')
     const [date, setDate] = useState(new Date())
 
+    let tutorInfoState = useSelector(state => state.tutorInfoState)
 
     const handleSubmit = e => {
         e.preventDefault()
         
-        console.log(startTime, endTime, date)
+        // console.log(startTime, endTime, date)
 
         fetch('http://localhost:3000/book-appointment', {
             method: 'POST',
@@ -22,17 +27,15 @@ export const AppointmentForm = () => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
+                tutor_id: tutorInfoState.tutor.id,
                 start_time: startTime,
                 end_time: endTime,
                 date: date
             })
         })
-        .then(res=>res.json())
-        .then(response => {
-            console.log(response)
-        })
+        .then(resp => resp.json())
+        .then(result => console.log(result))
         }
-
 
     return (
         <div >
@@ -53,7 +56,7 @@ export const AppointmentForm = () => {
                     />
                 </div>
                 <div>
-                    <button type='submit'>Schedule Appointment</button> 
+                    <button type='submit' >Schedule Appointment</button> 
                 </div>
             </form>
             

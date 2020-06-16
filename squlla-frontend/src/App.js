@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react';
+import { useSelector } from 'react-redux'
 import { BrowserRouter, Route} from 'react-router-dom'
 import {Login} from './components/Login'
+import {Logout} from './components/Logout'
 import {SignUp} from './components/SignUp'
 import { HomePage } from './components/Home/HomePage'
 import {FlashCard} from './components/FlashCard/FlashCard'
@@ -9,9 +11,9 @@ import {Navbar} from './components/Home/Navbar'
 import {StudentAppointment} from './components/Appointment/StudentAppointment'
 import {AppointmentForm} from './components/Appointment/AppointmentForm'
 import GraphIframe from './components/GraphIframe'
+import {FindStudentsMap} from './components/Map/FindStudentsMap'
 import { TutorsPage } from './components/Tutor/TutorsPage.js'
 import './App.css'
-
 
 // import { fetchFlashCards } from './actions/flashcardActions.js'
 import { useDispatch } from 'react-redux';
@@ -38,10 +40,12 @@ const App = () => {
           <Route exact path='/signup' component={SignUp} />
           <Route exact path='/graphing-calculator' component={GraphIframe} />
           <Route exact path='/flashcards' component={FlashCard } />
+          <Route exact path='/find-students' component={ FindStudentsMap } />
           <Route exact path='/profile' component={StudentProfile} />
           <Route exact path='/book-appointment' component={AppointmentForm} />
           <Route exact path='/tutors' component={TutorsPage} />
           <Route exact path='/appointments' component={StudentAppointment} />
+          <Route exact path='/logout' component={Logout} />
         </BrowserRouter>
       </div>
     );  
