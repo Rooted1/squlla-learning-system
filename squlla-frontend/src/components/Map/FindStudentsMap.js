@@ -115,7 +115,7 @@ export const FindStudentsMap = () => {
                         <div>
                         <h2>
                             <span role="img" aria-label="books">
-                            📚
+                            📚 
                             </span>{" "}
                             Alert
                         </h2>

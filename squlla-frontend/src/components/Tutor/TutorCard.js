@@ -77,7 +77,7 @@ export const TutorCard = (props)  => {
                             <div class="avatar-container">
                                 <img class="avatar" src={tutor.profile_pic} alt=''/>
                             </div>
-                            <h4 class="name">Science Tutor</h4>
+                            <h4 class="name">{tutor.subject} Tutor</h4>
                             <p class="textarea center-text">{tutor.school} </p>
                             <p class="stars center-text m-0">
                                 <i class="fas fa-star amber-text"> </i>
