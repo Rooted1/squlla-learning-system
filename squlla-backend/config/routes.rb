@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :flashcards
 
   post('/login', {to: 'users#login'})
-  # get('/logout', {to: 'users#destroy'})
+  get('/logout', {to: 'users#logout'})
   
   get('/tutors', {to: 'users#tutors'})
   get('/tutors/:id', {to: 'users#tutor_show'})

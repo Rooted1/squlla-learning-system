@@ -22,6 +22,12 @@ class UsersController < ApplicationController
         end
     end
 
+    def logout
+        session.clear
+        session[:user_id] = nil
+        render json: { status: 200, logged_out: true }
+    end
+
     def signup
         user = User.create({})
         render json: user
