@@ -7,6 +7,7 @@ import $ from 'jquery'
 import { useDispatch } from 'react-redux';
 
 export const TutorCard = (props)  => {
+
     let history = useHistory()
 
     function flip(){
@@ -51,6 +52,7 @@ export const TutorCard = (props)  => {
     }
 
     const tutor = props.tutor
+
     let dispatch = useDispatch()
 
     const getTutorDetails =  () => {
@@ -87,8 +89,9 @@ export const TutorCard = (props)  => {
                                 <i class="fas fa-star amber-text"> </i>
                             </p>
                             
-                        </div>
+                        </div>z
                         <button onClick={() => history.push('/book-appointment')}>Schedule Appointment</button>
+
                     {/* : */}
                     <div className="theback" onClick={handleFlip}>
                         <div class="my-gradient radius-back"></div>
