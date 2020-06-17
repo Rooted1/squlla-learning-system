@@ -15,7 +15,7 @@ let history = useHistory()
 return (
     <MDBNavbar color="default-color" dark expand="md">
       <MDBNavbarBrand>
-        <strong className="white-text" gradient="purple" hoverable>Squlla</strong>
+        <strong className="white-text" gradient="purple" hoverable='true'>Squlla</strong>
       </MDBNavbarBrand>
       <MDBNavbarToggler onClick={() => setToggleCollapse(!isOpen)} />
       <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
