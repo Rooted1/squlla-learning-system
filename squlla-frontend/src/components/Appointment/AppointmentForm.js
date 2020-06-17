@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { MDBBtn } from "mdbreact";
 
 
-export const AppointmentForm = () => {
+export const AppointmentForm = (props) => {
 
     let history = useHistory()
     let dispatch = useDispatch()
@@ -18,7 +18,7 @@ export const AppointmentForm = () => {
     let tutorInfoState = useSelector(state => state.tutorInfoState) 
     const handleSubmit = e => {
         e.preventDefault()
-        
+        props.onCloseModal()
         fetch('http://localhost:3000/book-appointment', {
             credentials: 'include', 
             method: 'POST',
@@ -33,8 +33,12 @@ export const AppointmentForm = () => {
             })
         })
         .then(resp => resp.json())
-        .then(result => dispatch({type: 'ADD_APPOINTMENT', student_appointments: result}))
-        history.push('/appointments')
+        .then(result => {
+            dispatch({type: 'ADD_APPOINTMENT', student_appointments: result})
+            setTimeout( () => history.push('/appointments'), 500)
+    
+        })
+        
         }
 
     return (
