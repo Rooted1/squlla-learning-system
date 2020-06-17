@@ -6,11 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-require 'random-location'
 
 Flashcard.destroy_all
 User.destroy_all
 Appointment.destroy_all
+
+rand_latitude = Random.new.rand(25.760427..31.766083)
+rand_longitude = Random.new.rand(-94.369804..-94.358810)
 
 Flashcard.create({
     question: "Displacement",
@@ -1474,7 +1476,8 @@ level_array = ['Freshman', 'Sophomore', 'Junior', 'Senior']
       role: 'student',
       email: Faker::Internet.free_email,
       subject: nil,
-      zip_code: rand(77002..77079)
+      latitude: Random.new.rand(25.760427..31.766083).round(6),
+      longitude: Random.new.rand(-94.369804..-94.358810).round(6)
   })
   end
 end
@@ -1501,7 +1504,8 @@ tutor_subjects = ['Math', 'Physics', 'Biology', 'Chemistry', 'Computer Science']
         role: 'tutor',
         email: Faker::Internet.free_email,
         subject: subject,
-        zip_code: rand(77002..77079)
+        latitude: Random.new.rand(25.760427..31.766083),
+        longitude: Random.new.rand(-94.369804..-94.358810)
       })
     end
   end
