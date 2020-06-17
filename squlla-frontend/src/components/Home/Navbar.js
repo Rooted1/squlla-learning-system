@@ -74,7 +74,7 @@ return (
                   </MDBDropdownToggle>
                   <MDBDropdownMenu className="dropdown-default">
                     <MDBDropdownItem onClick={()=> history.push('/profile')}>View Profile</MDBDropdownItem>
-                    <MDBDropdownItem onClick={()=> history.push('/appointments')} >Appointments<sup  style={{color: "red", fontWeight: "bold"}}>{userState.student_appointments.length}</sup></MDBDropdownItem>
+                    <MDBDropdownItem onClick={()=> history.push('/appointments')} >Appointments<sup  style={{color: "red", fontWeight: "bold"}}>{userState.student_appointments == undefined ? 0 : userState.student_appointments.length}</sup></MDBDropdownItem>
                     <MDBDropdownItem onClick={()=> history.push('/my-flashcards')} >My Flashcards</MDBDropdownItem>
                     <MDBDropdownItem onClick={()=> history.push('/settings')} >Account Settings</MDBDropdownItem>
                     <MDBDropdownItem onClick={()=> history.push('/study-groups')} >Study Groups</MDBDropdownItem>

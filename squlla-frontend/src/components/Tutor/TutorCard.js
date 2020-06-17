@@ -89,7 +89,7 @@ export const TutorCard = (props)  => {
                                 <i class="fas fa-star amber-text"> </i>
                             </p>
                             
-                        </div>z
+                        </div>
                         <button onClick={() => history.push('/book-appointment')}>Schedule Appointment</button>
 
                     {/* : */}
