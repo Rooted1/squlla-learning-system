@@ -15,6 +15,8 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :social_handle
       t.string :role
       t.string :email
+      t.integer :zip_code
+      t.string :subject
 
       t.timestamps
     end

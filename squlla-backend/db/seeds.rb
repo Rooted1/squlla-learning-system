@@ -1471,32 +1471,38 @@ level_array = ['Freshman', 'Sophomore', 'Junior', 'Senior']
       password: 'test',
       social_handle: '@squlla',
       role: 'student',
-      email: Faker::Internet.free_email
+      email: Faker::Internet.free_email,
+      subject: nil,
+      zip_code: rand(77002..77079)
   })
   end
 end
 
 tutor_level = ['Junior', 'Senior', 'Graduate']
-
+tutor_subjects = ['Math', 'Physics', 'Biology', 'Chemistry', 'Computer Science']
 
 2.times do 
   tutor_level.each do |level|
-    User.create({
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      school: Faker::University.name,
-      level: level,
-      graduating_year: Random.new.rand(2017..2019),
-      discipline: Faker::Educator.degree,
-      bio: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.',
-      likes: 0,
-      unlikes: 0,
-      profile_pic: Faker::Avatar.image,
-      password: 'test',
-      social_handle: '@squlla',
-      role: 'tutor',
-      email: Faker::Internet.free_email
-  })
+    tutor_subjects.each do |subject|
+      User.create({
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        school: Faker::University.name,
+        level: level,
+        graduating_year: Random.new.rand(2017..2019),
+        discipline: Faker::Educator.degree,
+        bio: 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.',
+        likes: 0,
+        unlikes: 0,
+        profile_pic: Faker::Avatar.image,
+        password: 'test',
+        social_handle: '@squlla',
+        role: 'tutor',
+        email: Faker::Internet.free_email,
+        subject: subject,
+        zip_code: rand(77002..77079)
+      })
+    end
   end
 end
 start_time = Time.new 
