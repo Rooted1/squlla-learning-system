@@ -9,7 +9,9 @@ export const TutorsPage = () => {
     let tutorsArray = useSelector(state => state.tutorsState.tutors)
 
     useEffect (() => {
-        fetch('http://localhost:3000/tutors')
+        fetch('http://localhost:3000/tutors', {
+            credentials: 'include',
+        })
         .then(response => response.json())
         .then(tutors => {
             dispatch({type: 'ADD_TUTORS', tutors: tutors})

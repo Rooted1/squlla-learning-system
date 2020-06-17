@@ -15,6 +15,7 @@ export const Login = () => {
     e.preventDefault()
     
     fetch('http://localhost:3000/login', {
+      credentials: 'include',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -89,7 +89,7 @@ export const TutorCard = (props)  => {
                 <div class="thecard">
                     <div ref={(ref) => flip = ref} >
                     {/* {isFlipped ?  */}
-                        <div class="thefront" onClick={ handleFlip }>
+                        <div class="thefront" onClick={ handleFlip } style={{}}>
                             {/* <div className="my-gradient radius-front"></div> */}
                             <div class="avatar-container">
                                 <img class="avatar" src={tutor.profile_pic} alt=''/>

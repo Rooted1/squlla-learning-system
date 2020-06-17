@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2020_06_07_222740) do
     t.integer "student_id"
     t.integer "tutor_id"
     t.string "status"
-    t.time "start_time"
-    t.time "end_time"
+    t.string "start_time"
+    t.string "end_time"
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
