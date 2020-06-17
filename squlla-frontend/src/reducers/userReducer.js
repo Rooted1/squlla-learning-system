@@ -18,7 +18,11 @@
         case 'ADD_APPOINTMENT':
             return {
                 ...state,
-                student_appointments: [...state.user.student_appointments, action.student_appointments]
+                user: {
+                    ...state.user,
+                    student_appointments: [...state.user.student_appointments, action.student_appointments]
+                }
+                
             }
         default:
             return state
