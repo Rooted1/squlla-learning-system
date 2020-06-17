@@ -9,19 +9,18 @@ import { MDBBtn } from "mdbreact";
 export const AppointmentForm = () => {
 
     let history = useHistory()
+    let dispatch = useDispatch()
 
     const [startTime, setStartTime] = useState('')
     const [endTime, setEndTime] = useState('')
     const [date, setDate] = useState(new Date())
 
     let tutorInfoState = useSelector(state => state.tutorInfoState) 
-
     const handleSubmit = e => {
         e.preventDefault()
         
-        console.log(startTime, endTime, date)
-
         fetch('http://localhost:3000/book-appointment', {
+            credentials: 'include', 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -34,7 +33,8 @@ export const AppointmentForm = () => {
             })
         })
         .then(resp => resp.json())
-        .then(result => console.log(result))
+        .then(result => dispatch({type: 'ADD_APPOINTMENT', student_appointments: result}))
+        history.push('/appointments')
         }
 
     return (

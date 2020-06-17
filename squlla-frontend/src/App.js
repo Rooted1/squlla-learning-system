@@ -25,10 +25,22 @@ const App = () => {
   let dispatch = useDispatch ()
 
   useEffect (()=>{
-    fetch('http://localhost:3000/flashcards')
+    fetch('http://localhost:3000/flashcards', {
+      credentials: 'include',
+    })
         .then(response => response.json())
         .then(flashcards => {
           dispatch({type: 'ADD_FLASHCARDS', flashcards: flashcards})
+        });
+  }, [])
+
+  useEffect (()=>{
+    fetch('http://localhost:3000/loggedInUser', {
+      credentials: 'include',
+    })
+        .then(response => response.json())
+        .then(result => {
+          dispatch({type: 'LOGIN', user: result})
         });
   }, [])
 

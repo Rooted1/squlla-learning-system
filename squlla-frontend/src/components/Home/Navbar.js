@@ -8,7 +8,6 @@ export const Navbar = () => {
 const [isOpen, setToggleCollapse] = useState(false)
 
 let userState = useSelector(state => state.userState.user)
-console.log( 'In Navbar ', userState)
 
 let history = useHistory()
 

@@ -4,8 +4,8 @@ class CreateAppointments < ActiveRecord::Migration[6.0]
       t.integer :student_id
       t.integer :tutor_id
       t.string :status
-      t.time :start_time
-      t.time :end_time
+      t.string :start_time
+      t.string :end_time
       t.date :date
 
       t.timestamps

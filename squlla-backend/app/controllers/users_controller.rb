@@ -58,4 +58,8 @@ class UsersController < ApplicationController
         student = User.find(params[:id])
         render json: student, include: :student_appointments
     end
+    def user 
+        user = User.find(session[:user_id])
+        render json: user, include: :student_appointments
+    end
 end

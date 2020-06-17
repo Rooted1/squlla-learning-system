@@ -45,7 +45,7 @@ export const StudentAppointmentCard = (props) => {
                         <MDBCol md="6" className={`${color} mt-1 d-flex justify-content-end `} >{props.appointment.status}</MDBCol>
                     </MDBRow>
                     <MDBRow className='grey-text mt-1 d-flex justify-content-begin '>
-                        <MDBCol ><MDBIcon far icon="clock" /> {props.appointment.start_time, ' - ', props.appointment.end_time}</MDBCol>
+                        <MDBCol ><MDBIcon far icon="clock" /> {props.appointment.start_time}  -  {props.appointment.end_time}</MDBCol>
                     </MDBRow>
                     <MDBRow>
                         <MDBCol md="6" className='grey-text mt-1 d-flex justify-content-begin '><MDBIcon far icon="calendar-alt" /> {props.appointment.date}</MDBCol>
