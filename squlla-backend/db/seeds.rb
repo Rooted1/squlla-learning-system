@@ -1506,10 +1506,10 @@ tutor_subjects = ['Math', 'Physics', 'Biology', 'Chemistry', 'Computer Science']
   end
 end
 start_time = Time.new 
-start_time.strftime("%I:%M %p")
+start_time.strftime("%H:%M")
 
 end_time = Time.new + 1800
-end_time.strftime("%I:%M %p")
+end_time.strftime("%H:%M")
 
 status_array = ['pending', 'approved', 'completed', 'cancelled']
 

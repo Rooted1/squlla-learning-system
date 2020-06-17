@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, Fragment} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import { MDBBtn } from "mdbreact";
 
 
 export const AppointmentForm = () => {
@@ -14,12 +14,12 @@ export const AppointmentForm = () => {
     const [endTime, setEndTime] = useState('')
     const [date, setDate] = useState(new Date())
 
-    let tutorInfoState = useSelector(state => state.tutorInfoState)
+    let tutorInfoState = useSelector(state => state.tutorInfoState) 
 
     const handleSubmit = e => {
         e.preventDefault()
         
-        // console.log(startTime, endTime, date)
+        console.log(startTime, endTime, date)
 
         fetch('http://localhost:3000/book-appointment', {
             method: 'POST',
@@ -39,6 +39,7 @@ export const AppointmentForm = () => {
 
     return (
         <div >
+            <h5>{tutorInfoState.tutor.first_name} {tutorInfoState.tutor.last_name}</h5>
             <form onSubmit={(e) => handleSubmit(e)}>
                 <div class="md-form md-outline">
                     <input type="time" id="default-picker" class="form-control" placeholder="Select time" value={startTime} onChange={e => setStartTime(e.target.value)}/>
@@ -55,9 +56,9 @@ export const AppointmentForm = () => {
                         onChange={(date) =>  setDate(date) }                
                     />
                 </div>
-                <div>
-                    <button type='submit' >Schedule Appointment</button> 
-                </div>
+                    <Fragment>
+                        <MDBBtn gradient="aqua" type='submit' style={{fontWeight: 'bold', borderRadius: '40%'}}>Schedule Appointment</MDBBtn>
+                    </Fragment>
             </form>
             
         </div>

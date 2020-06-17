@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
+import { MDBBtn } from "mdbreact";
 import { useHistory } from 'react-router-dom'
 import '../../stylesheets/tutors.css'
 import { MDBCol} from 'mdbreact';
 import {findDOMNode} from 'react-dom'
 import $ from 'jquery'
 import { useDispatch } from 'react-redux';
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
+import {AppointmentForm} from '../Appointment/AppointmentForm'
 
 export const TutorCard = (props)  => {
 
@@ -56,10 +60,10 @@ export const TutorCard = (props)  => {
     let dispatch = useDispatch()
 
     const getTutorDetails =  () => {
+        console.log(tutor)
         fetch(`http://localhost:3000/tutors/${tutor.id}`)
         .then(response => response.json())
         .then(tutor => {
-            console.log('before dispatch', tutor)
             dispatch({type: 'GET_TUTOR_DETAILS', tutor: tutor})
         })
     }
@@ -68,6 +72,17 @@ export const TutorCard = (props)  => {
     // const [isFlipped, setIsFlipped] = useState(false)
 
     // console.log(isFlipped)
+
+
+    const [isOpen, setIsOpen] = useState(false)
+
+    const onOpenModal = () => {
+        setIsOpen(!isOpen)
+    }
+
+    const onCloseModal = () => {
+        setIsOpen(!isOpen)
+    }
 
     return (
         <MDBCol >
@@ -90,7 +105,12 @@ export const TutorCard = (props)  => {
                             </p>
                             
                         </div>
-                        <button onClick={() => history.push('/book-appointment')}>Schedule Appointment</button>
+                        <Fragment>
+                            <MDBBtn color='blue' type='submit' style={{fontWeight: 'bold', borderRadius: '15px 50px', padding: '8px'}} onClick={() => {onOpenModal(); getTutorDetails()}}>Book a Session</MDBBtn>
+                        </Fragment>
+                        <Modal open={isOpen} onClose={onCloseModal} center >
+                            < AppointmentForm />
+                        </Modal>
 
                     {/* : */}
                     <div className="theback" onClick={handleFlip}>
