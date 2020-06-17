@@ -77,11 +77,11 @@ export const TutorCard = (props)  => {
     const [isOpen, setIsOpen] = useState(false)
 
     const onOpenModal = () => {
-        setIsOpen(!isOpen)
+        setIsOpen(true)
     }
 
     const onCloseModal = () => {
-        setIsOpen(!isOpen)
+        setIsOpen(false)
     }
 
     return (
@@ -109,7 +109,7 @@ export const TutorCard = (props)  => {
                             <MDBBtn color='blue' type='submit' style={{fontWeight: 'bold', borderRadius: '15px 50px', padding: '8px'}} onClick={() => {onOpenModal(); getTutorDetails()}}>Book a Session</MDBBtn>
                         </Fragment>
                         <Modal open={isOpen} onClose={onCloseModal} center >
-                            < AppointmentForm />
+                            < AppointmentForm onCloseModal={onCloseModal}/>
                         </Modal>
 
                     {/* : */}
