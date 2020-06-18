@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   post('/signup', {to: 'users#signup'})
   get('/loggedInUser', {to: 'users#user'})
   get('/users-addresses', {to: 'users#all_users_addresses'})
+
+  get('/physics-flashcards', {to: 'flashcards#physics_flashcards'})
+  get('/french-flashcards', {to: 'flashcards#french_flashcards'})
   
   get('/tutors', {to: 'users#tutors'})
   get('/tutors/:id', {to: 'users#tutor_show'})

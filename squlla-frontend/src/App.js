@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import { useSelector } from 'react-redux'
 import { BrowserRouter, Route} from 'react-router-dom'
 import {Login} from './components/Login'
 import {Logout} from './components/Logout'
@@ -12,6 +11,10 @@ import {StudentAppointment} from './components/Appointment/StudentAppointment'
 import GraphIframe from './components/GraphIframe'
 import {FindStudentsMap} from './components/Map/FindStudentsMap'
 import { TutorsPage } from './components/Tutor/TutorsPage.js'
+import { AllFlashcards } from './components/FlashCard/AllFlashcards'
+import { PhysicsFlashcards } from './components/FlashCard/PhysicsFlashcards'
+import { FrenchFlashcards } from './components/FlashCard/FrenchFlashcards'
+
 import './App.css'
 
 import { FlipTutorCard } from './components/Tutor/FlipTutorCard.js'
@@ -51,11 +54,14 @@ const App = () => {
       <div className="App">
         <BrowserRouter>
         <Navbar />
-          <Route exact path='/' component={HomePage} />
+          <Route exact path='/home' component={HomePage} />
           <Route exact path='/login' component={Login}  /> 
           <Route exact path='/signup' component={SignUp} />
           <Route exact path='/graphing-calculator' component={GraphIframe} />
-          <Route exact path='/flashcards' component={FlashCard } />
+          {/* <Route exact path='/flashcards' component={FlashCard } /> */}
+          <Route exact path='/all-flashcards' component={FlashCard } />
+          <Route exact path='/physics-flashcards' component={PhysicsFlashcards } />
+          <Route exact path='/french-flashcards' component={FrenchFlashcards } />
           <Route exact path='/find-students' component={ FindStudentsMap } />
           <Route exact path='/profile' component={StudentProfile} />
           {/* <Route exact path='/book-appointment' component={AppointmentForm} /> */}

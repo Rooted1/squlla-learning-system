@@ -20,13 +20,23 @@ return (
       <MDBCollapse id="navbarCollapse3" isOpen={isOpen} navbar>
         <MDBNavbarNav left>
           <MDBNavItem active>
-            <MDBNavLink to="/" onClick={()=> history.push('/')}>Home</MDBNavLink>
+            <MDBNavLink to="/home" onClick={()=> history.push('/home')}>Home</MDBNavLink>
           </MDBNavItem>
           <MDBNavItem>
             {/* <MDBNavLink to="#!">Study</MDBNavLink> */}
           </MDBNavItem>
           <MDBNavItem>
-            <MDBNavLink to="/flashcards" onClick={()=> history.push('/flashcards')}>Flashcards</MDBNavLink>
+            <MDBDropdown>
+              <MDBDropdownToggle nav caret>
+                <div className="d-none d-md-inline">Flashcards</div>
+              </MDBDropdownToggle>
+              <MDBDropdownMenu className="dropdown-default">
+                <MDBDropdownItem onClick={()=> history.push('/all-flashcards')}>All Flashcards</MDBDropdownItem>
+                <MDBDropdownItem onClick={()=> history.push('/physics-flashcards')}>Physics Flashcards</MDBDropdownItem>
+                <MDBDropdownItem onClick={()=> history.push('/french-flashcards')}>French Flashcards</MDBDropdownItem>
+              </MDBDropdownMenu>
+            </MDBDropdown>
+            {/* <MDBNavLink to="/flashcards" onClick={()=> history.push('/flashcards')}>Flashcards</MDBNavLink> */}
           </MDBNavItem>
           <MDBNavItem>
             <MDBNavLink to="/tutors">Find a Tutor</MDBNavLink>
@@ -34,6 +44,7 @@ return (
           <MDBNavItem>
             <MDBNavLink to="/find-students">Find a Study Mate</MDBNavLink>
           </MDBNavItem>
+
           <MDBNavItem>
             <MDBDropdown>
               <MDBDropdownToggle nav caret>

@@ -6,8 +6,6 @@ export const Logout = () => {
     let dispatch = useDispatch()
     let userState = useSelector(state => state.userState)
 
-    console.log(userState)
-
     useEffect(() => {
         fetch('http://localhost:3000/logout', {
             // credentials: 'include',
@@ -19,7 +17,6 @@ export const Logout = () => {
         })
         .then(res=>res.json())
         .then(response => {
-            console.log(response)
             dispatch({type: 'LOGOUT', user: null})
         })
     }, [])
@@ -29,7 +26,7 @@ export const Logout = () => {
         <div style={{backgroundColor: '#f5f7f6', height: '100vh'}}>
             <div style={{padding: '200px' }}>
                 <h1 style={{padding: '12px'}}>I am logged out. </h1>
-                <h5 style={{fontWeight: 'bold', padding: '12px', fontSize: '25px'}}>Thanks for making out time to see my project 😊</h5>
+                <h5 style={{fontWeight: 'bold', padding: '12px', fontSize: '25px'}}>Thanks for making time to see my project 😊</h5>
                 <h6 style={{fontWeight: 'medium',}}>Made with ❤️ by your girl Ruth Obe 🥰</h6>
             </div>
         </div>
