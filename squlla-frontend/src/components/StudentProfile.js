@@ -1,9 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux'
 import { MDBCard, MDBCardBody, MDBCardImage, MDBView, MDBCardTitle, MDBCardText, MDBRow, MDBCol, MDBIcon } from 'mdbreact';
 
 export const StudentProfile = () => {
+  let currentUser = useSelector(state => state.userState.user)
+
   return (
-    <MDBRow>
+    <MDBRow style={{paddingLeft: '550px', paddingTop: '55px'}}>
       <MDBCol md='4'>
         <MDBCard wide cascade>
           <MDBView cascade>
@@ -18,14 +21,13 @@ export const StudentProfile = () => {
 
           <MDBCardBody cascade className='text-center'>
             <MDBCardTitle className='card-title'>
-              <strong>Alice Mayer</strong>
+              <strong>{currentUser.first_name} {currentUser.last_name}</strong>
             </MDBCardTitle>
 
-            <p className='font-weight-bold blue-text'>Sophomore @Texas A&M University</p>
+            <p className='font-weight-bold blue-text'>{currentUser.level} @{currentUser.school}</p>
 
             <MDBCardText>
-              Sed ut perspiciatis unde omnis iste natus sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam.{' '}
+              {currentUser.bio}{' '}
             </MDBCardText>
 
             <MDBCol md='12' className='d-flex justify-content-center'>
