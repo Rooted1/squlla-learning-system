@@ -44,6 +44,7 @@ const options = {
 export const FindStudentsMap = () => {
 
     const [coords, setCoords] = useState([])
+    const [current, setUser] = useState({first_name: '', last_name: '', latitude: '', longitude: ''})
 
     useEffect (()=>{
       fetch('http://localhost:3000/users-addresses', {
@@ -98,7 +99,7 @@ export const FindStudentsMap = () => {
                     position={{ lat: coord.latitude, lng: coord.longitude }}
                     onClick={() => {
                       setSelected({lat: coord.latitude, lng: coord.longitude});
-                      
+                      setUser(coord)
                   }}
                   />
                 ))}
@@ -115,9 +116,10 @@ export const FindStudentsMap = () => {
                             <span role="img" aria-label="books">
                             📚 
                             </span>{" "}
-                            Alert
+                            {current.first_name} {current.last_name}
                         </h2>
-                        <p>Spotted </p>
+                        <p>{current.school} </p>
+                        <p>{current.level} </p>
                         </div>
                     </InfoWindow>
                     ) : null}
