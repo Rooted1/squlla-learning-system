@@ -9,6 +9,8 @@ import { useDispatch } from 'react-redux';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import {AppointmentForm} from '../Appointment/AppointmentForm'
+import {TutorFront} from './TutorFront'
+import {TutorBack} from './TutorBack'
 
 export const TutorCard = (props)  => {
 
@@ -69,10 +71,7 @@ export const TutorCard = (props)  => {
     }
 
     
-    // const [isFlipped, setIsFlipped] = useState(false)
-
-    // console.log(isFlipped)
-
+    const [isFlipped, setIsFlipped] = useState(false)
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -86,68 +85,16 @@ export const TutorCard = (props)  => {
 
     return (
         <MDBCol >
-                <div class="thecard">
-                    <div ref={(ref) => flip = ref} >
-                    {/* {isFlipped ?  */}
-                        <div class="thefront" onClick={ handleFlip } style={{}}>
-                            {/* <div className="my-gradient radius-front"></div> */}
-                            <div class="avatar-container">
-                                <img class="avatar" src={tutor.profile_pic} alt=''/>
-                            </div>
-                            <h4 class="name">{tutor.subject} Tutor</h4>
-                            <p class="textarea center-text">{tutor.school} </p>
-                            <p class="stars center-text m-0">
-                                <i class="fas fa-star amber-text"> </i>
-                                <i class="fas fa-star amber-text"> </i>
-                                <i class="fas fa-star amber-text"> </i>
-                                <i class="fas fa-star amber-text"> </i>
-                                <i class="fas fa-star amber-text"> </i>
-                            </p>
-                            
-                        </div>
-                        <Fragment>
-                            <MDBBtn color='blue' type='submit' style={{fontWeight: 'bold', borderRadius: '15px 50px', padding: '8px'}} onClick={() => {onOpenModal(); getTutorDetails()}}>Book a Session</MDBBtn>
-                        </Fragment>
-                        <Modal open={isOpen} onClose={onCloseModal} center >
-                            < AppointmentForm onCloseModal={onCloseModal}/>
-                        </Modal>
-
-                    {/* : */}
-                    <div className="theback" onClick={handleFlip}>
-                        <div class="my-gradient radius-back"></div>
-                        <h4 class="name">Title</h4>
-                        <p class="textarea">{tutor.bio}</p>
-                        <a href='#' class="btn waves-effect waves-light btn-red center-absolute">More</a>
-                            <ul class="list-unstyled list-inline text-center card-links">
-                            <li class="list-inline-item m-0">
-                                <a href='#' class="btn-floating btn-fb mx-1 waves-effect waves-light card-link">
-                                    <i class="fab fa-facebook-f fa-1x"> </i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item m-0">
-                                <a href='#' class="btn-floating btn-tw mx-1 waves-effect waves-light card-link">
-                                    <i class="fab fa-twitter"> </i>
-                                </a>
-                                </li>
-                            <li class="list-inline-item m-0">
-                                <a href='#' class="btn-floating btn-gplus mx-1 waves-effect waves-light card-link">
-                                    <i class="fab fa-google-plus-g"> </i>
-                                </a> 
-                            </li>
-                            <li class="list-inline-item m-0">
-                                <a href='#' class="btn-floating btn-li mx-1 waves-effect waves-light card-link">
-                                    <i class="fab fa-linkedin-in"> </i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    {/* } */}
-                    <div class="top waves-effect waves-light">
+            {isFlipped ? <TutorFront tutor={tutor}/> : < TutorBack tutor={tutor}/>}
+                <Fragment>
+                    <MDBBtn color='blue' type='submit' style={{fontWeight: 'bold', borderRadius: '15px 50px', padding: '8px'}} onClick={() => {onOpenModal(); getTutorDetails()}}>Book a Session</MDBBtn>
+                </Fragment>
+                <Modal open={isOpen} onClose={onCloseModal} center >
+                    < AppointmentForm onCloseModal={onCloseModal}/>
+                </Modal>
+                    {/* <div class="top waves-effect waves-light">
                         <h3>{tutor.first_name} {tutor.last_name}</h3>
-                    </div>
-                    
-                    </div>
-                </div>
+                    </div> */}
             </MDBCol>
     )
 }
