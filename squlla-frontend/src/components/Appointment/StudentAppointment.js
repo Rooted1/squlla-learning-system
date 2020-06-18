@@ -14,7 +14,7 @@ export const StudentAppointment = () => {
             <hr />
             <MDBRow>
                 {appointments.map((appointment) => <StudentAppointmentCard appointment={appointment} userDetails={userDetails}/>)}
-                </MDBRow>
+            </MDBRow>
             
         </div>
     )

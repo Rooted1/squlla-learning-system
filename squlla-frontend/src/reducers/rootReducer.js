@@ -8,5 +8,5 @@ export const rootReducer = combineReducers ({
     flashcardState: flashcardsReducer,
     userState: userReducer,
     tutorsState: tutorsReducer,
-    tutorInfoState: tutorInfoReducer
+    tutorInfoState: tutorInfoReducer,
 })

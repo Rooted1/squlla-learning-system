@@ -1,4 +1,5 @@
-import React, {useState, useCallback, useRef} from 'react'
+import React, {useState, useCallback, useRef, useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import {
     GoogleMap,
     useLoadScript,
@@ -40,23 +41,22 @@ const options = {
     zoomControl: true,
 };
 
-
 export const FindStudentsMap = () => {
 
-    const [ markers, setMarkers ] = useState([])
+    const [coords, setCoords] = useState([])
+
+    useEffect (()=>{
+      fetch('http://localhost:3000/users-addresses', {
+        credentials: 'include',
+      })
+      .then(response => response.json())
+      .then(users=> {
+        setCoords(users)
+      });
+    }, [])
+
     const [selected, setSelected] = useState(null);
-
-    const onMapClick = useCallback((e) => {
-        setMarkers((current) => [
-          ...current,
-          {
-            lat: e.latLng.lat(),
-            lng: e.latLng.lng(),
-            time: new Date(),
-          },
-        ]);
-      }, []);
-
+      
     const mapRef = useRef();
     const onMapLoad = useCallback((map) => {
         mapRef.current = map;
@@ -75,10 +75,8 @@ export const FindStudentsMap = () => {
     if (LoadError) return "Error loading maps"
     if (!isLoaded) return "Loading Maps"
 
-    
     return (
         <div >
-            
             <h1 >
                 Find Study Mates{" "}
                 <span role="img" aria-label="tent">📚</span>
@@ -91,18 +89,18 @@ export const FindStudentsMap = () => {
                 zoom={8}
                 center={center}
                 options={options}
-                onClick={onMapClick}
                 onLoad={onMapLoad}
             >
-                {markers.map((marker) => (
-                <Marker
-                    key={`${marker.lat}-${marker.lng}`}
-                    position={{ lat: marker.lat, lng: marker.lng }}
+
+                {coords.map((coord) => (
+                  <Marker 
+                    key={`${coord.latitude}-${coord.longitude}`}
+                    position={{ lat: coord.latitude, lng: coord.longitude }}
                     onClick={() => {
-                        setSelected(marker);
-                    }}
-                    
-                />
+                      setSelected({lat: coord.latitude, lng: coord.longitude});
+                      
+                  }}
+                  />
                 ))}
 
                 {selected ? (
