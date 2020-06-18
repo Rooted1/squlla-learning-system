@@ -65,7 +65,7 @@ class UsersController < ApplicationController
     end
 
     def all_users_addresses
-        users_addresses = User.select(:latitude, :longitude, :first_name, :last_name, :school)
-        render json: users_addresses, except: :id
+        users_addresses = User.select( :id, :latitude, :longitude, :first_name, :last_name, :school, :level)
+        render json: users_addresses, except: :password_digest
     end
 end
