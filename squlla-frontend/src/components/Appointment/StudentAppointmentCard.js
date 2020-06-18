@@ -37,7 +37,7 @@ export const StudentAppointmentCard = (props) => {
 
     return (
         
-        <MDBCol col='3'>
+        <MDBCol size="3" style={{padding: '5px'}}>
             <MDBCard narrow >
                 <MDBCardBody cascade className='text-center'>
                     <MDBRow>
