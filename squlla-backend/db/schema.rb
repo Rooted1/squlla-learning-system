@@ -54,7 +54,8 @@ ActiveRecord::Schema.define(version: 2020_06_07_222740) do
     t.string "social_handle"
     t.string "role"
     t.string "email"
-    t.integer "zip_code"
+    t.float "latitude"
+    t.float "longitude"
     t.string "subject"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

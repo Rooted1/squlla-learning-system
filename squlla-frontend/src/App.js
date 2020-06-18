@@ -38,11 +38,13 @@ const App = () => {
     fetch('http://localhost:3000/loggedInUser', {
       credentials: 'include',
     })
-        .then(response => response.json())
-        .then(result => {
-          dispatch({type: 'LOGIN', user: result})
-        });
+    .then(response => response.json())
+    .then(result => {
+      dispatch({type: 'LOGIN', user: result})
+    });
   }, [])
+
+  
 
 
     return (

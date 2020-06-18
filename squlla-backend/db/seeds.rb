@@ -11,6 +11,9 @@ Flashcard.destroy_all
 User.destroy_all
 Appointment.destroy_all
 
+rand_latitude = Random.new.rand(25.760427..31.766083)
+rand_longitude = Random.new.rand(-94.369804..-94.358810)
+
 Flashcard.create({
     question: "Displacement",
     answer: "Change in position of an object",
@@ -1473,7 +1476,8 @@ level_array = ['Freshman', 'Sophomore', 'Junior', 'Senior']
       role: 'student',
       email: Faker::Internet.free_email,
       subject: nil,
-      zip_code: rand(77002..77079)
+      latitude: Random.new.rand(29.509760014905595..30.48972986770344),
+      longitude: Random.new.rand(-99.20952567968749..-91.63994560156249)
   })
   end
 end
@@ -1500,7 +1504,8 @@ tutor_subjects = ['Math', 'Physics', 'Biology', 'Chemistry', 'Computer Science']
         role: 'tutor',
         email: Faker::Internet.free_email,
         subject: subject,
-        zip_code: rand(77002..77079)
+        latitude: Random.new.rand(29.509760014905595..30.48972986770344),
+        longitude: Random.new.rand(-99.20952567968749..-91.63994560156249)
       })
     end
   end

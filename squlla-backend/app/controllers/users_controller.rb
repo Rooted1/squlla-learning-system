@@ -58,8 +58,14 @@ class UsersController < ApplicationController
         student = User.find(params[:id])
         render json: student, include: :student_appointments
     end
+
     def user 
         user = User.find(session[:user_id])
         render json: user, include: :student_appointments
+    end
+
+    def all_users_addresses
+        users_addresses = User.select(:latitude, :longitude, :first_name, :last_name, :school)
+        render json: users_addresses, except: :id
     end
 end

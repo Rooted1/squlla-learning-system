@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get('/logout', {to: 'users#logout'})
   post('/signup', {to: 'users#signup'})
   get('/loggedInUser', {to: 'users#user'})
+  get('/users-addresses', {to: 'users#all_users_addresses'})
   
   get('/tutors', {to: 'users#tutors'})
   get('/tutors/:id', {to: 'users#tutor_show'})
