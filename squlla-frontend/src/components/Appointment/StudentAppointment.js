@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux'
 import { StudentAppointmentCard } from './StudentAppointmentCard'
-import { MDBRow} from 'mdbreact';
+import { MDBRow, MDBContainer} from 'mdbreact';
 
 export const StudentAppointment = () => {
     let userState = useSelector(state => state.userState)
@@ -12,9 +12,12 @@ export const StudentAppointment = () => {
         <div >
             <h1>My Appointments</h1>
             <hr />
-            <MDBRow>
+            <MDBContainer>
+                <MDBRow >
                 {appointments.map((appointment) => <StudentAppointmentCard appointment={appointment} userDetails={userDetails}/>)}
             </MDBRow>
+            </MDBContainer>
+            
             
         </div>
     )
