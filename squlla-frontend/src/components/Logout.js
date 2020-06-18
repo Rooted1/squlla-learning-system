@@ -26,6 +26,13 @@ export const Logout = () => {
         
 
     return (
-        <h1>I am logged out</h1>
+        <div style={{backgroundColor: '#f5f7f6', height: '100vh'}}>
+            <div style={{padding: '200px' }}>
+                <h1 style={{padding: '12px'}}>I am logged out. </h1>
+                <h5 style={{fontWeight: 'bold', padding: '12px', fontSize: '25px'}}>Thanks for making out time to see my project 😊</h5>
+                <h6 style={{fontWeight: 'medium',}}>Made with ❤️ by your girl Ruth Obe 🥰</h6>
+            </div>
+        </div>
+        
     )
 }
