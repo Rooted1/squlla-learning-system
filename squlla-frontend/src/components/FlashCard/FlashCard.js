@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {useSelector} from 'react-redux'
 import '../../stylesheets/flashcard.css'
-import { FlashcardCard } from './FlashcardCard'
+import { AllFlashcards } from './AllFlashcards'
 
 export const FlashCard = () => {        
     let flashcardState = useSelector(state => state.flashcardState)
@@ -10,7 +10,7 @@ export const FlashCard = () => {
     return (
         <div class="row text-center">
             {flashcards.map((flashcard) => 
-                <FlashcardCard flashcard={flashcard}/>
+                <AllFlashcards flashcard={flashcard}/>
              )}           
         </div>
         )

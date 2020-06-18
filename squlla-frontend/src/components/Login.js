@@ -30,7 +30,7 @@ export const Login = () => {
       dispatch({type: 'LOGIN', user: response.user})
     })
 
-    history.push('/')
+    history.push('/home')
   }
 
   return (  
