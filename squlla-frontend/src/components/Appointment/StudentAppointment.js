@@ -12,13 +12,9 @@ export const StudentAppointment = () => {
         <div >
             <h1>My Appointments</h1>
             <hr />
-            <MDBContainer>
-                <MDBRow >
+            <MDBRow >
                 {appointments.map((appointment) => <StudentAppointmentCard appointment={appointment} userDetails={userDetails}/>)}
-            </MDBRow>
-            </MDBContainer>
-            
-            
+            </MDBRow>            
         </div>
     )
 }
