@@ -19,6 +19,7 @@ const containerDiv = {
 export const HomePage = () => {
     let history = useHistory()
     let userState = useSelector(state => state.userState)
+    console.log(userState)
     return (
         <div  style={homeStyle}>
             <div style={containerDiv}>

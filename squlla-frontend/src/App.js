@@ -14,6 +14,7 @@ import { TutorsPage } from './components/Tutor/TutorsPage.js'
 import { AllFlashcards } from './components/FlashCard/AllFlashcards'
 import { PhysicsFlashcards } from './components/FlashCard/PhysicsFlashcards'
 import { FrenchFlashcards } from './components/FlashCard/FrenchFlashcards'
+import { StudentFlashcards } from './components/FlashCard/StudentFlashcards'
 
 import './App.css'
 
@@ -69,6 +70,7 @@ const App = () => {
           <Route exact path='/appointments' component={StudentAppointment} />
           <Route exact path='/logout' component={Logout} />
           <Route exact path='/flip' component={FlipTutorCard} />
+          <Route exact path='/my-flashcards' component={StudentFlashcards} />
         </BrowserRouter>
       </div>
     );  

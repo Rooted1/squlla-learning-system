@@ -124,7 +124,6 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.20.3, < 2.0)
     rake (13.0.1)
-    random-location (0.1.0)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -161,7 +160,6 @@ DEPENDENCIES
   puma (~> 4.1)
   rack-cors
   rails (~> 6.0.3, >= 6.0.3.1)
-  random-location
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post('/login', {to: 'users#login'})
   get('/logout', {to: 'users#logout'})
   post('/signup', {to: 'users#signup'})
-  get('/loggedInUser', {to: 'users#user'})
+  get('/loggedInUser', {to: 'users#show'})
   get('/users-addresses', {to: 'users#all_users_addresses'})
 
   get('/physics-flashcards', {to: 'flashcards#physics_flashcards'})
