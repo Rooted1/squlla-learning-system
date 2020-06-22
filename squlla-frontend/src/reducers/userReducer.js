@@ -38,4 +38,3 @@
     }
 }
 
-// Embracing happiness and positivities in challenging situations.

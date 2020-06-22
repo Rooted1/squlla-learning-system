@@ -8,7 +8,7 @@ export const FlashCard = () => {
     const flashcards = flashcardState.flashcards
 
     return (
-        <div class="row text-center">
+        <div class="row text-center" style={{padding: '20px'}}>
             {flashcards.map((flashcard) => 
                 <AllFlashcards flashcard={flashcard}/>
              )}           
