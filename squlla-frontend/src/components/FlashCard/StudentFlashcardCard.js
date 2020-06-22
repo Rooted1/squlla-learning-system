@@ -12,7 +12,6 @@ export const StudentFlashcardCard = (props) => {
         .then(result => setCard(result))
     }, [])
 
-
     return (
         <div class="col-lg-4 col-md-4 mb-4">
             <div class="card">
