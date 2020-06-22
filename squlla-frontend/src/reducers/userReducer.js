@@ -24,6 +24,14 @@
                 }
                 
             }
+        case 'ADD_FLASHCARD':
+            return {
+                ...state,
+                user: {
+                    ...state.user,
+                    student_flashcards: [...state.user.student_flashcards, action.student_flashcards]
+                }
+            }
         default:
             return state
             

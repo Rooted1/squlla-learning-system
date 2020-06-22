@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import {useDispatch, useSelector} from 'react-redux'
+// import { useSelector} from 'react-redux'
 import { MDBCard, MDBCardBody, MDBRow, MDBCol, MDBIcon} from
 'mdbreact';
 
 export const StudentAppointmentCard = (props) => {
     const [tutor, setTutor] = useState({})
-    let tutorInfoState = useSelector(state => state.tutorInfoState)
+    // let tutorInfoState = useSelector(state => state.tutorInfoState)
     
     useEffect(() => {
         fetch(`http://localhost:3000/tutors/${props.appointment.tutor_id}`)
@@ -53,8 +53,7 @@ export const StudentAppointmentCard = (props) => {
                     </MDBRow>
                 </MDBCardBody>
             </MDBCard>
-        </MDBCol>
-               
+        </MDBCol>        
     )
 
 }

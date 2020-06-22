@@ -7,7 +7,7 @@ import {
     InfoWindow,
   } from "@react-google-maps/api";
 import mapStyles from '../../stylesheets/mapStyles'
-import '/Users/flatironschool/Desktop/Squlla/squlla-learning-system/squlla-frontend/src/stylesheets/findMap.css'
+import '/Users/ruthobe/Desktop/personal_projects/SQulla/squlla-learning-system/squlla-frontend/src/stylesheets/findMap.css'
 
   import usePlacesAutocomplete, {
     getGeocode,

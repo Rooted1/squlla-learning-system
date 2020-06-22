@@ -10,9 +10,7 @@ require 'faker'
 Flashcard.destroy_all
 User.destroy_all
 Appointment.destroy_all
-
-rand_latitude = Random.new.rand(25.760427..31.766083)
-rand_longitude = Random.new.rand(-94.369804..-94.358810)
+StudentFlashcard.destroy_all
 
 Flashcard.create({
     question: "Displacement",
@@ -1524,4 +1522,11 @@ status_array = ['pending', 'approved', 'completed', 'cancelled']
 
   end
   
+end
+
+2.times do 
+  StudentFlashcard.create({
+    student_id: User.where(:role => 'student').sample.id,
+    flashcard_id: Flashcard.all.sample.id
+  })
 end

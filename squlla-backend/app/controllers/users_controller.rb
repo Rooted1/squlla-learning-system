@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     def index
         students = User.where(:role => 'student')
         tutors = User.where(:role => 'tutor')
-        users = {students: students.as_json(include: :student_appointments), tutors: tutors.as_json(include: :tutoring_appointments)}
+        users = {students: students.as_json(:include => [:student_appointments, :student_flashcards], except: :password_digest), tutors: tutors.as_json(include: :tutoring_appointments, except: :password_digest)}
         
         render json: users
     end
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         if user != nil && user.authenticate(params[:password])
             session[:user_id] = user.id
             if user.role == 'student'
-                render json: {success: true, user: user.as_json(:include => [:student_appointments],  except: :password_digest) }
+                render json: {success: true, user: user.as_json(:include => [:student_appointments, :student_flashcards],  except: :password_digest) }
             elsif user.role == 'tutor'
                 render json: {success: true, user: user.as_json(:include => [ :tutoring_appointments],  except: :password_digest) }
             end
@@ -59,9 +59,9 @@ class UsersController < ApplicationController
         render json: student, include: :student_appointments
     end
 
-    def user 
+    def show 
         user = User.find(session[:user_id])
-        render json: user, include: :student_appointments
+        render json: user, :include => [:student_appointments, :student_flashcards], except: :password_digest
     end
 
     def all_users_addresses

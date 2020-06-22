@@ -13,4 +13,9 @@ class FlashcardsController < ApplicationController
         french_flashcards = Flashcard.where(:course_subject  => 'French')
         render json: french_flashcards
     end
+
+    def show
+        flashcard = Flashcard.find(params[:id])
+        render json: flashcard
+    end
 end
